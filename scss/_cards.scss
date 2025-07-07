@@ -1,0 +1,103 @@
+@use 'variables' as *;
+
+.lessons-grid {
+    padding: 0 40px;
+    
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+        font-weight: 600;
+    }
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.lesson-card {
+    background: $twitch-card;
+    border-radius: $border-radius;
+    overflow: hidden;
+    transition: all 0.3s;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba($twitch-purple, 0.2);
+    }
+    
+    .card-image {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        
+        .difficulty {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            
+            &.easy {
+                background: rgba($accent-blue, 0.9);
+            }
+            &.medium {
+                background: rgba(#ffb142, 0.9);
+            }
+            &.hard {
+                background: rgba($accent-red, 0.9);
+            }
+        }
+        
+        .play-btn {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: $twitch-purple;
+            border: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s;
+            
+            i {
+                font-size: 0.9rem;
+                margin-left: 2px;
+            }
+        }
+    }
+    
+    &:hover .play-btn {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .card-content {
+        padding: 20px;
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: $text-light;
+        }
+        
+        p {
+            color: $text-gray;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+    }
+} 

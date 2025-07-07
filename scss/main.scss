@@ -1,0 +1,23 @@
+@use 'variables' as *;
+@use 'sidebar';
+@use 'topbar';
+@use 'hero';
+@use 'cards';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: $bg-dark;
+    color: $text-light;
+    overflow-x: hidden;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+} 

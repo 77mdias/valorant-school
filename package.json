@@ -1,0 +1,28 @@
+{
+  "name": "valorant-learning-platform",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Uma plataforma moderna e responsiva para aprendizado de Valorant",
+  "keywords": [
+    "valorant",
+    "gaming",
+    "learning",
+    "platform",
+    "esports"
+  ],
+  "author": "77mdias <jean.carlos3@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "sass": "^1.69.0",
+    "prettier": "^3.0.0"
+  }
+}

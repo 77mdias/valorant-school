@@ -1,0 +1,9 @@
+Coloque as seguintes imagens nesta pasta:
+
+- valorant-logo.png (logo do Valorant)
+- valorant-banner.jpg (banner hero com agentes)
+- jett-card.jpg (imagem da Jett para card)
+- sova-card.jpg (imagem do Sova para card)
+- user-avatar.jpg (avatar do usuário)
+
+Você pode baixar imagens oficiais do Valorant ou usar placeholders temporários. 

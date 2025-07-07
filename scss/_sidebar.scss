@@ -1,0 +1,53 @@
+@use 'variables' as *;
+
+.sidebar {
+    width: 240px;
+    background-color: $twitch-darker;
+    padding: 20px 0;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    transition: all 0.3s ease;
+
+    .logo {
+        padding: 0 20px 30px;
+        img {
+            max-width: 160px;
+        }
+    }
+
+    .nav-links {
+        list-style: none;
+        
+        li {
+            padding: 12px 20px;
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: $border-radius-sm;
+            
+            i {
+                margin-right: 15px;
+                width: 20px;
+                text-align: center;
+            }
+
+            &:hover {
+                background-color: lighten($twitch-darker, 5%);
+            }
+
+            &.active {
+                background: $purple-gradient;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.main-content {
+    flex: 1;
+    margin-left: 240px;
+    padding-bottom: 50px;
+} 

@@ -1,0 +1,21 @@
+// Cores estilo Twitch
+$twitch-purple: #9146ff;
+$twitch-dark: #0e0e10;
+$twitch-darker: #18181b;
+$twitch-card: #1f1f23;
+
+// Cores adicionais
+$accent-blue: #00a8ff;
+$accent-red: #ff4655;
+$text-light: #efeff1;
+$text-gray: #adadb8;
+$bg-dark: #0e0e10;
+$bg-darker: #0a0a0c;
+
+// Gradientes
+$purple-gradient: linear-gradient(135deg, $twitch-purple 0%, #5d3aff 100%);
+$red-gradient: linear-gradient(135deg, $accent-red 0%, #ff6b6b 100%);
+
+// Bordas
+$border-radius: 12px;
+$border-radius-sm: 8px; 

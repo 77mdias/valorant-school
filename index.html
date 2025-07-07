@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Valorant Academy</title>
+		<link rel="stylesheet" href="scss/main.scss" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+	</head>
+	<body>
+		<div class="app-container">
+			<!-- Sidebar estilo Spotify -->
+			<nav class="sidebar">
+				<div class="logo">
+					<img src="/img/valorant-logo.png" alt="Valorant Academy" />
+				</div>
+				<ul class="nav-links">
+					<li class="active"><i class="fas fa-home"></i> Home</li>
+					<li><i class="fas fa-user-secret"></i> Agentes</li>
+					<li><i class="fas fa-shield-alt"></i> Funções</li>
+					<li><i class="fas fa-map"></i> Mapas</li>
+					<li><i class="fas fa-cog"></i> Configurações</li>
+				</ul>
+			</nav>
+
+			<!-- Conteúdo Principal -->
+			<main class="main-content">
+				<!-- Topbar estilo Twitch -->
+				<header class="topbar">
+					<div class="search-bar">
+						<i class="fas fa-search"></i>
+						<input type="text" placeholder="Buscar lições..." />
+					</div>
+					<div class="user-actions">
+						<i class="fas fa-bell"></i>
+						<div class="user-profile">
+							<img src="/img/user-avatar.jpg" alt="Perfil" />
+						</div>
+					</div>
+				</header>
+
+				<!-- Hero Section estilo Crunchyroll -->
+				<section class="hero">
+					<div class="hero-content">
+						<h1>Domine a Função Duelista</h1>
+						<p>Aprenda técnicas avançadas com Jett e Reyna para dominar o jogo</p>
+						<button class="btn-play">Assistir Agora <i class="fas fa-play"></i></button>
+					</div>
+				</section>
+
+				<!-- Grid de Cards estilo Spotify -->
+				<section class="lessons-grid">
+					<h2>Lições Recomendadas</h2>
+					<div class="cards-container">
+						<!-- Card 1 -->
+						<div class="lesson-card">
+							<div class="card-image" style="background-image: url('/img/jett-card.jpg')">
+								<div class="difficulty easy">Iniciante</div>
+								<button class="play-btn"><i class="fas fa-play"></i></button>
+							</div>
+							<div class="card-content">
+								<h3>Jett - Movimentos Ágeis</h3>
+								<p>Domine as habilidades de mobilidade</p>
+							</div>
+						</div>
+
+						<!-- Card 2 -->
+						<div class="lesson-card">
+							<div class="card-image" style="background-image: url('/img/sova-card.jpg')">
+								<div class="difficulty medium">Intermediário</div>
+								<button class="play-btn"><i class="fas fa-play"></i></button>
+							</div>
+							<div class="card-content">
+								<h3>Sova - Reconhecimento</h3>
+								<p>Use flechas de reconhecimento eficientemente</p>
+							</div>
+						</div>
+
+						<!-- Mais cards... -->
+					</div>
+				</section>
+			</main>
+		</div>
+	</body>
+</html>
