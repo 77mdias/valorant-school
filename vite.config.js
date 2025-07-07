@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
+  root: 'src',
   css: {
     preprocessorOptions: {
       scss: {
@@ -13,7 +14,7 @@ export default defineConfig({
     open: true
   },
   build: {
-    outDir: 'dist',
+    outDir: '../dist',
     assetsDir: 'assets'
   }
 }) 
