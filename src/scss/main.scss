@@ -1,9 +1,14 @@
 @use 'variables' as *;
-@use 'sidebar';
+
+@use 'bootstrap/scss/bootstrap';
+
+//CUSTOMIZAÇÕES
+@use 'custom';
+/* @use 'sidebar';
 @use 'topbar';
 @use 'hero';
 @use 'cards';
-
+ */
 * {
     margin: 0;
     padding: 0;
@@ -12,12 +17,13 @@
 }
 
 body {
-    background-color: $bg-dark;
-    color: $text-light;
+    background-color: #{$bg-dark};
+    color: #{$text-light};
     overflow-x: hidden;
 }
 
 .app-container {
     display: flex;
     min-height: 100vh;
-} 
+}
+
