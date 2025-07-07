@@ -1,4 +1,4 @@
-@use 'variables' as *;
+@use '../utils/variables' as *;
 
 .topbar {
     display: flex;
@@ -10,8 +10,8 @@
     position: sticky;
     top: 0;
     z-index: 90;
-    border-bottom: 1px solid var(--border-color);
     transition: all 0.3s ease;
+    border-bottom: 1px solid var(--border-color);
 
     .search-bar {
         position: relative;
@@ -93,8 +93,6 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             padding: 8px;
             border-radius: 50%;
-            
-            
             position: relative;
             overflow: hidden;
 
@@ -111,6 +109,7 @@
             }
 
             &:hover {
+                color: var(--accent-primary);
                 transform: translateY(-2px);
                 border-color: var(--accent-primary);
                 box-shadow: 0 4px 12px var(--accent-shadow);
@@ -121,6 +120,7 @@
             }
 
             &:focus-visible {
+                color: var(--accent-primary);
                 transform: translateY(-2px);
                 outline: none;
                 border-color: var(--accent-primary);
@@ -128,6 +128,7 @@
             }
 
             &[aria-expanded="true"] {
+                color: var(--accent-primary);
                 transform: translateY(-2px);
                 border-color: var(--accent-primary);
                 box-shadow: 0 4px 12px var(--accent-shadow);
@@ -137,8 +138,6 @@
                 transform: translateY(0);
                 box-shadow: 0 2px 6px var(--accent-shadow);
             }
-
-
         }
 
         i {
@@ -201,38 +200,58 @@
                     background-color: var(--accent-hover);
                     color: var(--accent-primary);
                     transform: translateX(5px);
-                    box-shadow: 0 2px 8px var(--accent-shadow);
-
+                    
                     &::before {
                         left: 100%;
                     }
                 }
     
+                &:focus {
+                    background-color: var(--accent-hover);
+                    color: var(--accent-primary);
+                    outline: none;
+                    box-shadow: 0 0 0 2px var(--accent-focus);
+                }
+    
                 i {
+                    font-size: 1.1rem;
                     width: 20px;
                     text-align: center;
-                    transition: transform 0.3s ease;
                 }
-
-                &:hover i {
-                    transform: scale(1.1);
+    
+                .badge {
+                    font-size: 0.8rem;
+                    padding: 0.2rem 0.5rem;
                 }
             }
     
-            .badge.bg-purple {
-                background-color: var(--accent-primary) !important;
+            .dropdown-divider {
+                border-color: var(--border-color);
+                margin: 0.5rem 0;
             }
         }
-
-    // Animação do dropdown
-    @keyframes slideDown {
-        from {
-            opacity: 0;
-            transform: translateY(-10px) scale(0.95);
+    
+        @keyframes slideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
-        to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
+}
+
+// Correção para remover foco durante mudança de tema
+.theme-changing {
+    .dropdownProfile {
+        &:focus-visible,
+        &[aria-expanded="true"] {
+            color: var(--text-primary) !important;
+            transform: none !important;
+            border-color: transparent !important;
+            box-shadow: none !important;
         }
     }
 } 

@@ -1,13 +1,12 @@
-@use 'variables' as *;
+@use 'utils/variables' as *;
+@use 'components/custom';
+@use 'layout/sidebar';
+@use 'layout/topbar';
+@use 'components/hero';
+@use 'components/cards';
 
-@use 'bootstrap/scss/bootstrap';
-
-// Módulos customizados
-@use 'custom';
-@use 'sidebar';
-@use 'topbar';
-@use 'hero';
-@use 'cards';
+// Depois as importações @import
+@import 'bootstrap';
 
 * {
     margin: 0;
