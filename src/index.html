@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Valorant Ace School</title>
     <link rel="icon" href="./assets/Valorant-Academy.png" type="image/png" />
-    <link rel="stylesheet" href="scss/main.scss" />
+    <!-- <link rel="stylesheet" href="scss/main.scss" /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -37,12 +37,129 @@
         <header class="topbar">
           <div class="search-bar">
             <i class="fas fa-search"></i>
-            <input type="text" placeholder="Buscar lições..." />
+            <input type="text" placeholder="Buscar aulas..." />
           </div>
           <div class="user-actions">
             <i class="fas fa-bell"></i>
 
-            <i class="fa-solid fa-circle-user"></i>
+            <!-- Dropdown Perfil -->
+            <div class="dropdown">
+              <button
+                class="btn dropdownProfile dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fa-solid fa-circle-user"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <!-- Perfil do usuário -->
+                <li>
+                  <button
+                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                    type="button"
+                  >
+                    <i class="fas fa-user-circle"></i>
+                    Meu Perfil
+                  </button>
+                </li>
+
+                <!-- Progresso -->
+                <li>
+                  <button
+                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                    type="button"
+                  >
+                    <i class="fas fa-chart-line text-success"></i>
+                    Meu Progresso
+                  </button>
+                </li>
+
+                <!-- Favoritos -->
+                <li>
+                  <button
+                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                    type="button"
+                  >
+                    <i class="fas fa-heart text-danger"></i>
+                    Aulas Favoritas
+                  </button>
+                </li>
+
+                <!-- Certificados -->
+                <li>
+                  <button
+                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                    type="button"
+                  >
+                    <i class="fas fa-certificate text-warning"></i>
+                    Certificados
+                  </button>
+                </li>
+
+                <li><hr class="dropdown-divider" /></li>
+
+                <!-- Rank/Elo -->
+                <li>
+                  <button
+                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                    type="button"
+                  >
+                    <i class="fas fa-trophy text-warning"></i>
+                    Meu Rank: <span class="badge bg-purple ms-1">Diamante</span>
+                  </button>
+                </li>
+
+                <!-- Estatísticas -->
+                <li>
+                  <button
+                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                    type="button"
+                  >
+                    <i class="fas fa-chart-bar text-info"></i>
+                    Estatísticas
+                  </button>
+                </li>
+
+                <li><hr class="dropdown-divider" /></li>
+
+                <!-- Configurações -->
+                <li>
+                  <button
+                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                    type="button"
+                  >
+                    <i class="fas fa-cog text-secondary"></i>
+                    Configurações
+                  </button>
+                </li>
+
+                <!-- Tema -->
+                <li>
+                  <button
+                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                    type="button"
+                    data-theme-toggle
+                  >
+                    <i class="fas fa-moon text-warning"></i>
+                    <span class="theme-text">Tema Escuro</span>
+                  </button>
+                </li>
+
+                <li><hr class="dropdown-divider" /></li>
+
+                <!-- Sair -->
+                <li>
+                  <button
+                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5 text-danger"
+                    type="button"
+                  >
+                    <i class="fas fa-sign-out-alt"></i>
+                    Sair
+                  </button>
+                </li>
+              </ul>
+            </div>
 
             <!-- <div class="user-profile">
 							<img src="/img/user-avatar.jpg" alt="Perfil" />
@@ -65,7 +182,7 @@
 
         <!-- Grid de Cards estilo Spotify -->
         <section class="lessons-grid">
-          <h2>Lições Recomendadas</h2>
+          <h2>Aulas Recomendadas</h2>
           <div class="cards-container">
             <!-- Card 1 -->
             <div class="lesson-card">
@@ -102,5 +219,7 @@
         </section>
       </main>
     </div>
+
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>

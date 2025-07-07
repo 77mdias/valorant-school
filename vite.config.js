@@ -5,7 +5,9 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "sass:math";`
+        additionalData: `@use "sass:math";`,
+        quietDeps: true,
+        silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin', 'color-functions']
       }
     }
   },
@@ -14,6 +16,11 @@ export default defineConfig({
     open: true
   },
   build: {
+    rollupOptions: {
+      input: {
+        main: 'src/index.html'
+      }
+    },
     outDir: '../dist',
     assetsDir: 'assets'
   }
