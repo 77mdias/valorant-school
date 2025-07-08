@@ -1,4 +1,5 @@
 @use '../utils/variables' as *;
+@use '../utils/responsive' as *;
 
 .hero {
     height: 70vh;
@@ -8,7 +9,7 @@
     margin: 0 40px 40px;
     box-shadow: 0 20px 50px var(--shadow-lg);
     
-    background: url('/assets/hero/valorant-banner.avif') center/cover no-repeat;
+    background: url('./assets/hero/valorant-banner.avif') center/cover no-repeat;
     
     &::before {
         content: '';
@@ -82,6 +83,16 @@
         
         i {
             font-size: 0.8rem;
+        }
+    }
+
+    @include mobile-only {
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+
+        .btn-play {
+            padding: 10px 20px;
         }
     }
 } 

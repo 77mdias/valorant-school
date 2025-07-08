@@ -4,216 +4,360 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Valorant Ace School</title>
-    <link rel="icon" href="./assets/Valorant-Academy.png" type="image/png" />
-    <!-- <link rel="stylesheet" href="scss/main.scss" /> -->
+    <link
+      rel="icon"
+      href="./assets/logoPage/Valorant-Academy.png"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
-  <body>
-    <div class="app-container">
-      <!-- Sidebar estilo Spotify -->
-      <nav class="sidebar">
-        <div class="logo">
-          <img
-            src="./assets/logoPage/Valorant-Academy.png"
-            alt="Valorant Academy"
-          />
-          <img src="./assets/logoPage/ACE.png" alt="ACE" />
-        </div>
-        <ul class="nav-links">
-          <li class="active"><i class="fas fa-home"></i> Home</li>
-          <li><i class="fas fa-user-secret"></i> Agentes</li>
-          <li><i class="fas fa-shield-alt"></i> Funções</li>
-          <li><i class="fas fa-map"></i> Mapas</li>
-          <li><i class="fas fa-cog"></i> Configurações</li>
-        </ul>
-      </nav>
-
-      <!-- Conteúdo Principal -->
-      <main class="main-content">
+  <body class="vw-100 vh-100">
+    <div id="" class="">
+      <div class="row">
         <!-- Topbar estilo Twitch -->
-        <header class="topbar">
-          <div class="search-bar">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Buscar aulas..." />
-          </div>
-          <div class="user-actions">
-            <i class="fas fa-bell"></i>
+        <nav class="navbar col-12 col-lg-12 p-0 navbar-expand-lg">
+          <div class="container-fluid" id="topBar">
+            <div class="topbar justify-content-between" id="navbarNav">
+              <!-- LOGO -->
+              <div class="logo">
+                <img
+                  src="./assets/logoPage/Valorant-Academy.png"
+                  alt="Valorant Academy"
+                />
+                <img src="./assets/logoPage/ACE.png" alt="ACE" />
+              </div>
 
-            <!-- Dropdown Perfil -->
-            <div class="dropdown">
-              <button
-                class="btn dropdownProfile dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <i class="fa-solid fa-circle-user"></i>
+              <!-- BARRA DE PESQUISA -->
+              <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar aulas..." />
+              </div>
+
+              <!-- BOTÕES -->
+              <div class="user-actions">
+                <!-- BOTÃO NOTIFICAÇÕES -->
+                <i class="fas fa-bell"></i>
+
+                <!-- DROPDOWN -->
+                <div class="dropdown">
+                  <button
+                    class="btn dropdownProfile dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-circle-user"></i>
+                  </button>
+                  <!-- DROPDOWN MENU -->
+                  <ul
+                    class="dropdown-menu dropdown-menu-dark dropdown-menu-end mt-3"
+                  >
+                    <!-- BOTÃO PERFIL -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        type="button"
+                      >
+                        <i class="fas fa-user-circle"></i>
+                        Meu Perfil
+                      </button>
+                    </li>
+
+                    <!-- BOTÃO PROGRESSO -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        type="button"
+                      >
+                        <i class="fas fa-chart-line text-success"></i>
+                        Meu Progresso
+                      </button>
+                    </li>
+
+                    <!-- BOTÃO FAVORITOS -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        type="button"
+                      >
+                        <i class="fas fa-heart text-danger"></i>
+                        Aulas Favoritas
+                      </button>
+                    </li>
+
+                    <!-- BOTÃO CERTIFICADOS -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        type="button"
+                      >
+                        <i class="fas fa-certificate text-warning"></i>
+                        Certificados
+                      </button>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO RANK/ELO -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        type="button"
+                      >
+                        <i class="fas fa-trophy text-warning"></i>
+                        Meu Rank:
+                        <span class="badge bg-purple ms-1">Diamante</span>
+                      </button>
+                    </li>
+
+                    <!-- BOTÃO ESTATÍSTICAS -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        type="button"
+                      >
+                        <i class="fas fa-chart-bar text-info"></i>
+                        Estatísticas
+                      </button>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO CONFIGURAÇÕES -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        type="button"
+                      >
+                        <i class="fas fa-cog text-secondary"></i>
+                        Configurações
+                      </button>
+                    </li>
+
+                    <!-- BOTÃO TEMA -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        type="button"
+                        data-theme-toggle
+                      >
+                        <i class="fas fa-moon text-warning"></i>
+                        <span class="theme-text">Tema Escuro</span>
+                      </button>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO SAIR -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5 text-danger"
+                        type="button"
+                      >
+                        <i class="fas fa-sign-out-alt"></i>
+                        Sair
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Sidebar com botão de fechar -->
+        <aside class="sidebar col-12 col-lg-3 col-xl-3 col-xxl-2" id="sidebar">
+          <!-- Botão fechar só aparece em mobile -->
+          <button class="close-btn d-lg-none" id="sidebarClose">
+            <i class="fas fa-times"></i>
+          </button>
+
+          <ul class="nav-links">
+            <li>
+              <a href="#" class="active"> <i class="fas fa-home"></i> Home </a>
+            </li>
+            <li>
+              <a href="#"> <i class="fas fa-user-secret"></i> Agentes </a>
+            </li>
+            <li>
+              <a href="#"> <i class="fas fa-shield-alt"></i> Funções </a>
+            </li>
+            <li>
+              <a href="#"> <i class="fas fa-map"></i> Mapas </a>
+            </li>
+            <li>
+              <a href="#"> <i class="fas fa-cog"></i> Configurações </a>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content col-12 col-lg-9 col-xl-9 col-xxl-10">
+          <!-- Hero Section estilo Crunchyroll -->
+          <section class="hero">
+            <div class="hero-content">
+              <h1>Domine a Função Duelista</h1>
+              <p>
+                Aprenda técnicas avançadas com Jett e Reyna para dominar o jogo
+              </p>
+              <button class="btn-play">
+                Assistir Agora <i class="fas fa-play"></i>
               </button>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <!-- Perfil do usuário -->
-                <li>
-                  <button
-                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
-                    type="button"
-                  >
-                    <i class="fas fa-user-circle"></i>
-                    Meu Perfil
-                  </button>
-                </li>
-
-                <!-- Progresso -->
-                <li>
-                  <button
-                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
-                    type="button"
-                  >
-                    <i class="fas fa-chart-line text-success"></i>
-                    Meu Progresso
-                  </button>
-                </li>
-
-                <!-- Favoritos -->
-                <li>
-                  <button
-                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
-                    type="button"
-                  >
-                    <i class="fas fa-heart text-danger"></i>
-                    Aulas Favoritas
-                  </button>
-                </li>
-
-                <!-- Certificados -->
-                <li>
-                  <button
-                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
-                    type="button"
-                  >
-                    <i class="fas fa-certificate text-warning"></i>
-                    Certificados
-                  </button>
-                </li>
-
-                <li><hr class="dropdown-divider" /></li>
-
-                <!-- Rank/Elo -->
-                <li>
-                  <button
-                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
-                    type="button"
-                  >
-                    <i class="fas fa-trophy text-warning"></i>
-                    Meu Rank: <span class="badge bg-purple ms-1">Diamante</span>
-                  </button>
-                </li>
-
-                <!-- Estatísticas -->
-                <li>
-                  <button
-                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
-                    type="button"
-                  >
-                    <i class="fas fa-chart-bar text-info"></i>
-                    Estatísticas
-                  </button>
-                </li>
-
-                <li><hr class="dropdown-divider" /></li>
-
-                <!-- Configurações -->
-                <li>
-                  <button
-                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
-                    type="button"
-                  >
-                    <i class="fas fa-cog text-secondary"></i>
-                    Configurações
-                  </button>
-                </li>
-
-                <!-- Tema -->
-                <li>
-                  <button
-                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
-                    type="button"
-                    data-theme-toggle
-                  >
-                    <i class="fas fa-moon text-warning"></i>
-                    <span class="theme-text">Tema Escuro</span>
-                  </button>
-                </li>
-
-                <li><hr class="dropdown-divider" /></li>
-
-                <!-- Sair -->
-                <li>
-                  <button
-                    class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5 text-danger"
-                    type="button"
-                  >
-                    <i class="fas fa-sign-out-alt"></i>
-                    Sair
-                  </button>
-                </li>
-              </ul>
             </div>
-          </div>
-        </header>
+          </section>
 
-        <!-- Hero Section estilo Crunchyroll -->
-        <section class="hero">
-          <div class="hero-content">
-            <h1>Domine a Função Duelista</h1>
-            <p>
-              Aprenda técnicas avançadas com Jett e Reyna para dominar o jogo
-            </p>
-            <button class="btn-play">
-              Assistir Agora <i class="fas fa-play"></i>
-            </button>
-          </div>
-        </section>
+          <!-- Grid de Cards estilo Netflix -->
+          <section class="lessons-grid">
+            <h2>Aulas Recomendadas</h2>
 
-        <!-- Grid de Cards estilo Spotify -->
-        <section class="lessons-grid">
-          <h2>Aulas Recomendadas</h2>
-          <div class="cards-container">
-            <!-- Card 1 -->
-            <div class="lesson-card">
-              <div
-                class="card-image"
-                style="background-image: url('/assets/cards/jett-card.jpg')"
-              >
-                <div class="difficulty easy">Iniciante</div>
-                <button class="play-btn"><i class="fas fa-play"></i></button>
+            <!-- ✅ CARROSSEL CONTAINER -->
+            <div class="carousel-container">
+              <!-- Botão Anterior -->
+              <button class="carousel-nav prev" id="prevBtn">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+
+              <!-- Container dos Cards -->
+              <div class="cards-carousel" id="cardsCarousel">
+                <div class="cards-wrapper">
+                  <!-- Card 1 -->
+                  <div class="lesson-card">
+                    <div
+                      class="card-image"
+                      style="
+                        background-image: url('./assets/cards/jett-card.jpg');
+                      "
+                    >
+                      <div class="difficulty easy">Iniciante</div>
+                      <button class="play-btn">
+                        <i class="fas fa-play"></i>
+                      </button>
+                    </div>
+                    <div class="card-content">
+                      <h3>Jett - Movimentos Ágeis</h3>
+                      <p>Domine as habilidades de mobilidade</p>
+                    </div>
+                  </div>
+
+                  <!-- Card 2 -->
+                  <div class="lesson-card">
+                    <div
+                      class="card-image"
+                      style="
+                        background-image: url('./assets/cards/sova-card.webp');
+                      "
+                    >
+                      <div class="difficulty medium">Intermediário</div>
+                      <button class="play-btn">
+                        <i class="fas fa-play"></i>
+                      </button>
+                    </div>
+                    <div class="card-content">
+                      <h3>Sova - Reconhecimento</h3>
+                      <p>Use flechas de reconhecimento eficientemente</p>
+                    </div>
+                  </div>
+
+                  <!-- Card 3 -->
+                  <div class="lesson-card">
+                    <div
+                      class="card-image"
+                      style="
+                        background-image: url('./assets/cards/jett-card.jpg');
+                      "
+                    >
+                      <div class="difficulty hard">Avançado</div>
+                      <button class="play-btn">
+                        <i class="fas fa-play"></i>
+                      </button>
+                    </div>
+                    <div class="card-content">
+                      <h3>Reyna - Frags</h3>
+                      <p>Maximizar eliminiações e impacto</p>
+                    </div>
+                  </div>
+
+                  <!-- Card 4 -->
+                  <div class="lesson-card">
+                    <div
+                      class="card-image"
+                      style="
+                        background-image: url('./assets/cards/sova-card.webp');
+                      "
+                    >
+                      <div class="difficulty medium">Intermediário</div>
+                      <button class="play-btn">
+                        <i class="fas fa-play"></i>
+                      </button>
+                    </div>
+                    <div class="card-content">
+                      <h3>Sage - Suporte</h3>
+                      <p>Estratégias de healing e revive</p>
+                    </div>
+                  </div>
+
+                  <!-- Card 5 -->
+                  <div class="lesson-card">
+                    <div
+                      class="card-image"
+                      style="
+                        background-image: url('./assets/cards/jett-card.jpg');
+                      "
+                    >
+                      <div class="difficulty easy">Iniciante</div>
+                      <button class="play-btn">
+                        <i class="fas fa-play"></i>
+                      </button>
+                    </div>
+                    <div class="card-content">
+                      <h3>Phoenix - Entry</h3>
+                      <p>Como ser um bom entry fragger</p>
+                    </div>
+                  </div>
+
+                  <!-- Card 6 -->
+                  <div class="lesson-card">
+                    <div
+                      class="card-image"
+                      style="
+                        background-image: url('./assets/cards/sova-card.webp');
+                      "
+                    >
+                      <div class="difficulty hard">Avançado</div>
+                      <button class="play-btn">
+                        <i class="fas fa-play"></i>
+                      </button>
+                    </div>
+                    <div class="card-content">
+                      <h3>Omen - Smokes</h3>
+                      <p>Posicionamento estratégico de smokes</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="card-content">
-                <h3>Jett - Movimentos Ágeis</h3>
-                <p>Domine as habilidades de mobilidade</p>
-              </div>
+
+              <!-- Botão Próximo -->
+              <button class="carousel-nav next" id="nextBtn">
+                <i class="fas fa-chevron-right"></i>
+              </button>
             </div>
 
-            <!-- Card 2 -->
-            <div class="lesson-card">
-              <div
-                class="card-image"
-                style="background-image: url('/assets/cards/sova-card.webp')"
-              >
-                <div class="difficulty medium">Intermediário</div>
-                <button class="play-btn"><i class="fas fa-play"></i></button>
-              </div>
-              <div class="card-content">
-                <h3>Sova - Reconhecimento</h3>
-                <p>Use flechas de reconhecimento eficientemente</p>
-              </div>
+            <!-- ✅ INDICADORES (gerados dinamicamente) -->
+            <div class="carousel-indicators" id="carouselIndicators">
+              <!-- Indicadores serão gerados pelo JavaScript -->
             </div>
-
-            <!-- Mais cards... -->
-          </div>
-        </section>
-      </main>
+          </section>
+        </main>
+      </div>
     </div>
 
     <script type="module" src="./js/main.js"></script>

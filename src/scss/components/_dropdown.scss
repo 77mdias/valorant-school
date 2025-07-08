@@ -1,0 +1,28 @@
+// ===== DROPDOWN CUSTOMIZADO =====
+.dropdown-menu {
+  min-width: 280px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  z-index: 9999 !important;
+  margin-top: 2rem;
+
+  .dropdown-item {
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    margin: 2px 8px;
+
+    &:hover {
+      background-color: rgba(145, 70, 255, 0.1);
+      transform: translateX(5px);
+    }
+
+    i {
+      width: 20px;
+      text-align: center;
+    }
+  }
+
+  .badge.bg-purple {
+    background-color: #9146ff !important;
+  }
+}

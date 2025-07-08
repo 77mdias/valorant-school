@@ -1,11 +1,25 @@
 import DropdownFocus from './DropdownFocus.js';
 
+// Variável para prevenir múltiplas inicializações
+let isInitialized = false;
+
 // Função para inicializar o toggle de tema
 function initThemeToggle() {
+  // Prevenir múltiplas inicializações
+  if (isInitialized) {
+    console.warn('⚠️ SwitchTheme já foi inicializado');
+    return;
+  }
+
   const themeToggleBtn = document.querySelector('[data-theme-toggle]');
   const body = document.body;
   const icon = themeToggleBtn?.querySelector('i');
   const text = themeToggleBtn?.querySelector('.theme-text');
+
+  if (!themeToggleBtn) {
+    console.warn('⚠️ Botão de tema não encontrado');
+    return;
+  }
 
   // Verificar tema salvo ou usar preferência do sistema
   const savedTheme = localStorage.getItem('theme');
@@ -15,20 +29,20 @@ function initThemeToggle() {
   // Aplicar tema inicial
   setTheme(currentTheme);
 
-  // Event listener para o botão
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      const newTheme = body.classList.contains('light-theme') ? 'dark' : 'light';
-      setTheme(newTheme);
+  // Event listener para o botão (única vez)
+  themeToggleBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation(); // Prevenir propagação
 
-      // Animação do botão
-      this.style.transform = 'scale(0.95)';
-      setTimeout(() => {
-        this.style.transform = 'scale(1)';
-      }, 150);
-    });
-  }
+    const newTheme = body.classList.contains('light-theme') ? 'dark' : 'light';
+    setTheme(newTheme);
+
+    // Animação do botão
+    this.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      this.style.transform = 'scale(1)';
+    }, 150);
+  });
 
   function setTheme(theme) {
     // Adicionar classe de transição
@@ -81,8 +95,8 @@ function initThemeToggle() {
       detail: { theme }
     }));
 
-    // Log para debug (opcional)
-    console.log(`Tema alterado para: ${theme}`);
+    // Log para debug
+    console.log(`✅ Tema alterado para: ${theme}`);
   }
 
   // Listener para mudanças na preferência do sistema
@@ -91,6 +105,10 @@ function initThemeToggle() {
       setTheme(e.matches ? 'dark' : 'light');
     }
   });
+
+  // Marcar como inicializado
+  isInitialized = true;
+  console.log('✅ SwitchTheme inicializado');
 }
 
 export default initThemeToggle;

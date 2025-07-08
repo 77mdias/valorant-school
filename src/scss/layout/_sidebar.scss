@@ -1,76 +1,122 @@
+// src/scss/layout/_sidebar.scss (versão que mantém tudo funcionando)
 @use '../utils/variables' as *;
+@use '../utils/responsive' as *;
 
 .sidebar {
-    width: 240px;
+    // ===== BASE (MOBILE FIRST) =====
     background-color: var(--bg-card);
-    padding: 20px 0;
-    height: 100vh;
-    position: fixed;
-    z-index: 100;
-    transition: all 0.3s ease;
     border-right: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    padding: 20px 0;
+    position: relative; // Não fixed, mantém no layout
 
+    // ===== MOBILE (mantém visível, só otimiza) =====
+    @include mobile-only {
+        padding: 15px 0;
+        border-bottom-right-radius: 12px;
 
-    .logo {
-        padding: 0 20px 30px;
-        margin-bottom: 20px;
-        
-        img {
-            height: 60px;
-            width: auto;
-            object-fit: contain;
-            filter: var(--logo-filter);
+        // Compactar um pouco em mobile
+        .nav-links li a {
+            padding: 14px 16px;
+            font-size: 0.95rem;
+            min-height: 48px; // Touch friendly
+
+            i {
+                margin-right: 10px;
+                width: 22px;
+                font-size: 1rem;
+            }
         }
     }
 
+    // ===== TABLET =====
+    @include tablet-only {
+        padding: 18px 0;
+
+        .nav-links li a {
+            padding: 15px 18px;
+            font-size: 1rem;
+        }
+    }
+
+    // ===== NAVEGAÇÃO =====
     .nav-links {
         list-style: none;
-        
+        padding: 0;
+        margin: 0;
+
         li {
-            padding: 12px 20px;
-            margin: 5px 10px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.2s;
-            border-radius: $border-radius-sm;
-            color: var(--text-secondary);
-            
-            i {
-                margin-right: 15px;
-                width: 20px;
-                text-align: center;
-                color: var(--text-muted);
-                transition: color 0.2s;
-            }
+            position: relative;
 
-            &:hover {
-                background-color: var(--accent-hover);
-                color: var(--text-primary);
-                
+            a {
+                display: flex;
+                align-items: center;
+                padding: 12px 16px;
+                text-decoration: none;
+                color: var(--text-secondary);
+                font-size: 1rem;
+                font-weight: 500;
+                transition: all 0.2s ease;
+                border-radius: 0;
+
                 i {
-                    color: var(--accent-primary);
+                    margin-right: 12px;
+                    width: 24px;
+                    text-align: center;
+                    color: var(--text-muted);
+                    font-size: 1.1rem;
+                    transition: color 0.2s;
                 }
-            }
 
-            &.active {
-                background: var(--gradient-primary);
-                color: white;
-                font-weight: 600;
-                
-                i {
+                // ===== HOVER STATES =====
+                &:hover {
+                    background-color: var(--accent-hover);
+                    color: var(--text-primary);
+                    padding-left: 20px;
+
+                    i {
+                        color: var(--accent-primary);
+                    }
+                }
+
+                // ===== ACTIVE STATE =====
+                &.active {
+                    background: var(--gradient-primary);
                     color: white;
+                    font-weight: 600;
+                    border-left: 4px solid var(--accent-primary);
+
+                    i {
+                        color: white;
+                    }
                 }
             }
+        }
+    }
+
+    // ===== DESKTOP =====
+    @include desktop-only {
+        padding: 20px 0;
+
+        .nav-links li a {
+            padding: 12px 16px;
+            font-size: 1rem;
+        }
+    }
+
+    // ===== LARGE DESKTOP =====
+    @include hd-desktop-only {
+        .nav-links li a {
+            padding: 14px 18px;
+            font-size: 1.05rem;
+        }
+    }
+
+    // ===== FULL HD DESKTOP =====
+    @include full-hd-desktop-only {
+        .nav-links li a {
+            padding: 16px 20px;
+            font-size: 1.1rem;
         }
     }
 }
-
-.main-content {
-    flex: 1;
-    margin-left: 240px;
-    padding-bottom: 50px;
-    background-color: var(--bg-primary);
-    min-height: 100vh;
-    transition: background-color 0.3s ease;
-} 

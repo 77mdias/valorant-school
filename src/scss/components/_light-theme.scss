@@ -1,0 +1,173 @@
+@use '../utils/variables' as *;
+
+// ===== TEMA CLARO - CONSOLIDADO =====
+.light-theme {
+
+  // Hero
+  .hero {
+    box-shadow: 0 20px 60px var(--shadow-lg);
+    border: 1px solid var(--border-color);
+
+    &::before {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(145, 70, 255, 0.3) 100%);
+      filter: brightness(0.8) blur(2px);
+    }
+
+    .hero-content {
+      h1 {
+        text-shadow: 0 4px 16px rgba(145, 70, 255, 0.5);
+      }
+
+      p {
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .btn-play {
+        box-shadow: 0 8px 24px var(--accent-shadow);
+
+        &:hover {
+          box-shadow: 0 12px 32px var(--accent-shadow);
+        }
+      }
+    }
+  }
+
+  // Efeito de partículas de fundo
+  .main-content::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 240px;
+    width: calc(100% - 240px);
+    height: 100%;
+    background-image:
+      radial-gradient(circle at 25% 25%, rgba(145, 70, 255, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(124, 58, 237, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  // Sidebar com glassmorphism
+  .sidebar {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid var(--border-color);
+    box-shadow: 4px 0 24px var(--shadow-md);
+
+    .logo {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+
+      img {
+        filter: var(--logo-filter);
+      }
+    }
+
+    .nav-links li {
+      &:hover {
+        background: var(--accent-hover);
+        transform: translateX(4px);
+        box-shadow: 0 4px 12px var(--accent-shadow);
+      }
+
+      &.active {
+        background: var(--gradient-primary);
+        box-shadow: 0 4px 16px var(--accent-shadow);
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  // Topbar com glassmorphism
+  .topbar {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    border-bottom: none;
+    box-shadow: none;
+
+    .search-bar input {
+      background: var(--bg-input);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 8px var(--shadow-sm);
+
+      &:focus {
+        box-shadow: 0 0 0 3px var(--accent-focus), 0 4px 12px var(--shadow-md);
+      }
+    }
+  }
+
+  // Cards com glassmorphism
+  .lesson-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 24px var(--shadow-md);
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px var(--accent-shadow);
+      border-color: var(--accent-primary);
+    }
+
+    .card-content {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    }
+  }
+
+  // Dropdown para tema claro
+  .dropdown-menu {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 12px 32px var(--shadow-lg);
+  }
+
+  // Scrollbar para tema claro
+  ::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary);
+    border: 2px solid var(--bg-secondary);
+
+    &:hover {
+      background: linear-gradient(135deg, rgba(145, 70, 255, 0.8) 0%, rgba(124, 58, 237, 0.8) 100%);
+    }
+  }
+
+  // Tipografia melhorada
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+
+  .lessons-grid h2 {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+  }
+
+  // Focus states melhorados
+  button:focus,
+  input:focus,
+  [tabindex]:focus {
+    outline: 3px solid var(--accent-focus);
+    outline-offset: 2px;
+  }
+
+  // Hover states mais suaves
+  button,
+  .btn,
+  .lesson-card,
+  .nav-links li {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
