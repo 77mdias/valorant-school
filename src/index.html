@@ -26,7 +26,12 @@
         <!-- Topbar estilo Twitch -->
         <nav class="navbar col-12 col-lg-12 p-0 navbar-expand-lg">
           <div class="container-fluid" id="topBar">
-            <div class="topbar justify-content-between" id="navbarNav">
+            <div class="topbar justify-content-between gap-2" id="navbarNav">
+              <!-- BOTÃO HAMBURGER (só aparece em mobile) -->
+              <button class="hamburger-btn d-lg-none" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+              </button>
+
               <!-- LOGO -->
               <div class="logo">
                 <img
@@ -174,6 +179,9 @@
           </div>
         </nav>
 
+        <!-- Overlay para mobile -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
         <!-- Sidebar com botão de fechar -->
         <aside class="sidebar col-12 col-lg-3 col-xl-3 col-xxl-2" id="sidebar">
           <!-- Botão fechar só aparece em mobile -->
@@ -182,6 +190,10 @@
           </button>
 
           <ul class="nav-links">
+            <div class="search-bar d-lg-none mb-2">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Buscar aulas..." />
+            </div>
             <li>
               <a href="#" class="active"> <i class="fas fa-home"></i> Home </a>
             </li>

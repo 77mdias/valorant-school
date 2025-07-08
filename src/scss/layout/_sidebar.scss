@@ -1,6 +1,31 @@
-// src/scss/layout/_sidebar.scss (versão que mantém tudo funcionando)
+// src/scss/layout/_sidebar.scss
 @use '../utils/variables' as *;
 @use '../utils/responsive' as *;
+
+
+// ===== OVERLAY PARA MOBILE =====
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    // Só em mobile
+    @media (min-width: 992px) {
+        display: none;
+    }
+}
 
 .sidebar {
     // ===== BASE (MOBILE FIRST) =====
@@ -10,10 +35,82 @@
     padding: 20px 0;
     position: relative; // Não fixed, mantém no layout
 
+    // ===== MOBILE: SIDEBAR COLAPSÁVEL =====
+        @media (max-width: 991.98px) {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 280px;
+            height: 100vh;
+            z-index: 1000;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+    
+            &.active {
+                left: 0;
+                z-index: 2000;
+            }
+        }
+    
+        // ===== DESKTOP: SIDEBAR SEMPRE VISÍVEL =====
+        @media (min-width: 992px) {
+            position: relative;
+            left: 0;
+            width: auto;
+            height: auto;
+            box-shadow: none;
+        }
+
+    // ===== BOTÃO FECHAR =====
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 32px;
+        height: 32px;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        z-index: 10;
+
+        i {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            transition: color 0.2s ease;
+        }
+
+        &:hover {
+            background: var(--accent-hover);
+            border-color: var(--accent-primary);
+            transform: scale(1.05);
+
+            i {
+                color: var(--accent-primary);
+            }
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+
+        // Só mostrar em mobile
+        @include tablet-only {
+            display: none;
+        }
+    }
+
     // ===== MOBILE (mantém visível, só otimiza) =====
     @include mobile-only {
         padding: 15px 0;
         border-bottom-right-radius: 12px;
+
+        // Espaço extra no topo para o botão fechar
+        padding-top: 55px;
 
         // Compactar um pouco em mobile
         .nav-links li a {
@@ -119,4 +216,60 @@
             font-size: 1.1rem;
         }
     }
+
+    .search-bar {
+        position: relative;
+        flex: 1;
+        max-width: 400px;
+        margin: 0 20px;
+
+        i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            z-index: 1;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-input);
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s;
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 0 2px var(--accent-primary);
+                border-color: var(--accent-primary);
+
+                +i {
+                    color: var(--accent-primary);
+                }
+            }
+
+            &::placeholder {
+                color: var(--text-muted);
+            }
+        }
+
+        @include mobile-only {
+            display: flex;
+        }
+
+        @include tablet-only {
+            display: none;
+
+        }
+
+        @include desktop-only {
+            display: none;
+        }
+    }
+
 }
