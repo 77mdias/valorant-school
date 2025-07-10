@@ -9,7 +9,7 @@ export default defineConfig({
         additionalData: `@use "sass:math";`,
         quietDeps: true,
         silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin', 'color-functions'],
-        includePaths: ['node_modules']
+        includePaths: ['node_modules', path.resolve(__dirname, 'src/scss/fake-bootstrap')]
       }
     }
   },
