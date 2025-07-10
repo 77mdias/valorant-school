@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import path from 'path'
 
 export default defineConfig({
   root: 'src',
@@ -7,7 +8,8 @@ export default defineConfig({
       scss: {
         additionalData: `@use "sass:math";`,
         quietDeps: true,
-        silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin', 'color-functions']
+        silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin', 'color-functions'],
+        includePaths: ['node_modules']
       }
     }
   },
@@ -33,5 +35,10 @@ export default defineConfig({
     },
     outDir: '../dist',
     assetsDir: 'assets'
-  }
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
 }) 
