@@ -1,0 +1,105 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Configuração para SPA e múltiplas páginas HTML
+[[redirects]]
+  from = "/pages/*"
+  to = "/pages/:splat"
+  status = 200
+
+# Redirecionamentos para páginas principais
+[[redirects]]
+  from = "/agentes"
+  to = "/pages/agentes.html"
+  status = 200
+
+[[redirects]]
+  from = "/funcoes"
+  to = "/pages/funcoes.html"
+  status = 200
+
+[[redirects]]
+  from = "/mapas"
+  to = "/pages/mapas.html"
+  status = 200
+
+[[redirects]]
+  from = "/configuracoes"
+  to = "/pages/configuracoes.html"
+  status = 200
+
+[[redirects]]
+  from = "/perfil"
+  to = "/pages/perfil.html"
+  status = 200
+
+[[redirects]]
+  from = "/progresso"
+  to = "/pages/progresso.html"
+  status = 200
+
+[[redirects]]
+  from = "/favoritas"
+  to = "/pages/favoritas.html"
+  status = 200
+
+[[redirects]]
+  from = "/certificados"
+  to = "/pages/certificados.html"
+  status = 200
+
+[[redirects]]
+  from = "/rank"
+  to = "/pages/rank.html"
+  status = 200
+
+[[redirects]]
+  from = "/estatisticas"
+  to = "/pages/estatisticas.html"
+  status = 200
+
+# Fallback para 404
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
+# Headers para otimização
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.jpeg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.avif"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000" 

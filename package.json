@@ -16,6 +16,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:netlify": "npm run build",
     "preview": "vite preview",
     "lint": "prettier --check .",
     "format": "prettier --write ."
