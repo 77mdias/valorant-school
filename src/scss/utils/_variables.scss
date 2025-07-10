@@ -4,6 +4,12 @@ $twitch-dark: #0e0e10;
 $twitch-darker: #18181b;
 $twitch-card: #1f1f23;
 
+//cores estilo spotify
+$spotify-green: #2bff75;
+$spotify-dark: #121212;
+$spotify-darker: #000000;
+$spotify-card: #181818;
+
 // Cores adicionais
 $accent-blue: #00a8ff;
 $accent-red: #ff4655;
@@ -31,6 +37,7 @@ $border-radius-sm: 8px;
   --text-secondary: #{$text-gray};
   --text-muted: #{$text-gray};
   --accent-primary: #{$twitch-purple};
+  --accent-secondary: #{$spotify-green};
   --accent-hover: rgba(145, 70, 255, 0.1);
   --accent-focus: rgba(145, 70, 255, 0.3);
   --accent-shadow: rgba(145, 70, 255, 0.4);

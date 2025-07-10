@@ -174,9 +174,9 @@
   // ===== MELHORIAS ESPECÍFICAS PARA ÍCONES E CONTRASTE =====
   
   // Ícones em geral - melhor contraste
-  i, .fas, .far, .fab, .fal {
-    color: var(--text-primary);
-    
+  i, .fas, .far, .fab, .fal, .selo-black {
+    color: var(--text-primary) !important;
+
     &.text-warning {
       color: #f59e0b !important;
     }
@@ -197,6 +197,11 @@
       color: #0ea5e9 !important;
     }
   }
+
+  .selo-white {
+    color: white !important;
+  }
+
 
   // Conquistas - melhor contraste para ícones
   .achievements, .recent-achievements, .progress-achievements {
@@ -271,11 +276,7 @@
     color: white !important;
   }
 
-  // Dashboard de progresso
-  .progress-dashboard .card-icon {
-    background: linear-gradient(135deg, var(--accent-primary), #7c3aed) !important;
-    color: white !important;
-  }
+
 
   // Trilha de aprendizado - ícones
   .learning-path .path-item {
@@ -411,7 +412,7 @@
   .rank-history .timeline-icon {
     background: linear-gradient(135deg, var(--accent-primary), #7c3aed) !important;
     color: white !important;
-    border: 4px solid white !important;
+    border: 4px solid black !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
   }
 
