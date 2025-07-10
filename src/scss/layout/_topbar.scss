@@ -195,7 +195,6 @@
             color: var(--text-primary);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             padding: 8px;
-            border-radius: 50%;
             position: relative;
             overflow: hidden;
 
@@ -304,6 +303,7 @@
                 &:hover {
                     background-color: var(--accent-hover);
                     color: var(--text-primary);
+                    transform: scale(1.05);
                     
                     &::before {
                         left: 100%;

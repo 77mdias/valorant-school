@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agentes - Valorant Ace School</title>
+    <link
+      rel="icon"
+      href="../assets/logoPage/Valorant-Academy.png"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="vw-100 vh-100">
+    <div id="" class="">
+      <div class="row">
+        <!-- Topbar estilo Twitch -->
+        <nav class="navbar col-12 col-lg-12 p-0 navbar-expand-lg">
+          <div class="container-fluid" id="topBar">
+            <div class="topbar justify-content-between gap-2" id="navbarNav">
+              <!-- BOTÃO HAMBURGER (só aparece em mobile) -->
+              <button class="hamburger-btn d-lg-none" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+              </button>
+
+              <!-- LOGO -->
+              <div class="logo">
+                <img
+                  src="../assets/logoPage/Valorant-Academy.png"
+                  alt="Valorant Academy"
+                />
+                <img src="../assets/logoPage/ACE.png" alt="ACE" />
+              </div>
+
+              <!-- BARRA DE PESQUISA -->
+              <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar agentes..." />
+              </div>
+
+              <!-- BOTÕES -->
+              <div class="user-actions">
+                <!-- BOTÃO NOTIFICAÇÕES -->
+                <i class="fas fa-bell"></i>
+
+                <!-- DROPDOWN -->
+                <div class="dropdown">
+                  <button
+                    class="btn dropdownProfile dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-circle-user"></i>
+                  </button>
+                  <!-- DROPDOWN MENU -->
+                  <ul
+                    class="dropdown-menu dropdown-menu-dark dropdown-menu-end mt-3"
+                  >
+                    <!-- BOTÃO PERFIL -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="perfil.html"
+                      >
+                        <i class="fas fa-user-circle"></i>
+                        Meu Perfil
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO PROGRESSO -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="progresso.html"
+                      >
+                        <i class="fas fa-chart-line text-success"></i>
+                        Meu Progresso
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO FAVORITOS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="favoritas.html"
+                      >
+                        <i class="fas fa-heart text-danger"></i>
+                        Aulas Favoritas
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO CERTIFICADOS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="certificados.html"
+                      >
+                        <i class="fas fa-certificate text-warning"></i>
+                        Certificados
+                      </a>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO RANK/ELO -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="rank.html"
+                      >
+                        <i class="fas fa-trophy text-warning"></i>
+                        Meu Rank:
+                        <span class="badge bg-purple ms-1">Diamante</span>
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO ESTATÍSTICAS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="estatisticas.html"
+                      >
+                        <i class="fas fa-chart-bar text-info"></i>
+                        Estatísticas
+                      </a>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO CONFIGURAÇÕES -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="configuracoes.html"
+                      >
+                        <i class="fas fa-cog text-secondary"></i>
+                        Configurações
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO TEMA -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        type="button"
+                        data-theme-toggle
+                      >
+                        <i class="fas fa-moon text-warning"></i>
+                        <span class="theme-text">Tema Escuro</span>
+                      </button>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO SAIR -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5 text-danger"
+                        type="button"
+                      >
+                        <i class="fas fa-sign-out-alt"></i>
+                        Sair
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Overlay para mobile -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Sidebar com botão de fechar -->
+        <aside class="sidebar col-12 col-lg-3 col-xl-3 col-xxl-2" id="sidebar">
+          <!-- Botão fechar só aparece em mobile -->
+          <button class="close-btn d-lg-none" id="sidebarClose">
+            <i class="fas fa-times"></i>
+          </button>
+
+          <!-- MENU -->
+          <ul class="nav-links">
+            <div class="search-bar d-lg-none mb-2">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Buscar agentes..." />
+            </div>
+            <li>
+              <a href="../index.html"> <i class="fas fa-home"></i> Home </a>
+            </li>
+            <li>
+              <a href="agentes.html" class="active">
+                <i class="fas fa-user-secret"></i> Agentes
+              </a>
+            </li>
+            <li>
+              <a href="./funcoes.html">
+                <i class="fas fa-shield-alt"></i> Funções
+              </a>
+            </li>
+            <li>
+              <a href="./mapas.html"> <i class="fas fa-map"></i> Mapas </a>
+            </li>
+            <li>
+              <a href="./configuracoes.html">
+                <i class="fas fa-cog"></i> Configurações
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content col-12 col-lg-9 col-xl-9 col-xxl-10">
+          <!-- Hero Section -->
+          <section
+            class="hero"
+            style="background-image: url('../assets/hero/valorant-banner.avif')"
+          >
+            <div class="hero-content">
+              <h1>Conheça os Agentes</h1>
+              <p>
+                Descubra as habilidades únicas e estratégias para cada agente do
+                Valorant
+              </p>
+              <button class="btn-play">
+                Explorar Agentes <i class="fas fa-user-secret"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- Filtros de Agentes -->
+          <section class="filters-section">
+            <h2>Filtrar por Função</h2>
+            <div class="filter-buttons">
+              <button class="filter-btn active" data-filter="all">
+                <i class="fas fa-users"></i> Todos
+              </button>
+              <button class="filter-btn" data-filter="duelist">
+                <i class="fas fa-sword"></i> Duelista
+              </button>
+              <button class="filter-btn" data-filter="initiator">
+                <i class="fas fa-bullseye"></i> Iniciador
+              </button>
+              <button class="filter-btn" data-filter="controller">
+                <i class="fas fa-shield-alt"></i> Controlador
+              </button>
+              <button class="filter-btn" data-filter="sentinel">
+                <i class="fas fa-eye"></i> Sentinela
+              </button>
+            </div>
+          </section>
+
+          <!-- Grid de Agentes -->
+          <section class="agents-grid">
+            <div class="agents-container">
+              <!-- Agente Jett -->
+              <div class="agent-card" data-role="duelist">
+                <div
+                  class="agent-image"
+                  style="background-image: url('../assets/cards/jett-card.jpg')"
+                >
+                  <div class="agent-role duelist">Duelista</div>
+                  <div class="agent-overlay">
+                    <button class="learn-btn">
+                      <i class="fas fa-play"></i> Aprender
+                    </button>
+                  </div>
+                </div>
+                <div class="agent-info">
+                  <h3>Jett</h3>
+                  <p>Agente ágil focada em mobilidade e eliminations rápidas</p>
+                  <div class="agent-abilities">
+                    <span class="ability">Rajada Ascendente</span>
+                    <span class="ability">Corrente de Vento</span>
+                    <span class="ability">Brisa Turbulenta</span>
+                    <span class="ability ultimate">Tempestade de Lâminas</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Agente Reyna -->
+              <div class="agent-card" data-role="duelist">
+                <div
+                  class="agent-image"
+                  style="
+                    background-image: url('../assets/cards/reyna-card1.webp');
+                  "
+                >
+                  <div class="agent-role duelist">Duelista</div>
+                  <div class="agent-overlay">
+                    <button class="learn-btn">
+                      <i class="fas fa-play"></i> Aprender
+                    </button>
+                  </div>
+                </div>
+                <div class="agent-info">
+                  <h3>Reyna</h3>
+                  <p>Duelista vampira que se fortalece com eliminações</p>
+                  <div class="agent-abilities">
+                    <span class="ability">Devorar</span>
+                    <span class="ability">Dispensar</span>
+                    <span class="ability">Olhar Voraz</span>
+                    <span class="ability ultimate">Imperatriz</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Agente Phoenix -->
+              <div class="agent-card" data-role="duelist">
+                <div
+                  class="agent-image"
+                  style="
+                    background-image: url('../assets/cards/phoenix-card.jpg');
+                  "
+                >
+                  <div class="agent-role duelist">Duelista</div>
+                  <div class="agent-overlay">
+                    <button class="learn-btn">
+                      <i class="fas fa-play"></i> Aprender
+                    </button>
+                  </div>
+                </div>
+                <div class="agent-info">
+                  <h3>Phoenix</h3>
+                  <p>Duelista com habilidades de fogo e auto-cura</p>
+                  <div class="agent-abilities">
+                    <span class="ability">Bola Curva</span>
+                    <span class="ability">Mãos Quentes</span>
+                    <span class="ability">Labareda</span>
+                    <span class="ability ultimate">Renascer</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Agente Sova -->
+              <div class="agent-card" data-role="initiator">
+                <div
+                  class="agent-image"
+                  style="
+                    background-image: url('../assets/cards/sova-card.webp');
+                  "
+                >
+                  <div class="agent-role initiator">Iniciador</div>
+                  <div class="agent-overlay">
+                    <button class="learn-btn">
+                      <i class="fas fa-play"></i> Aprender
+                    </button>
+                  </div>
+                </div>
+                <div class="agent-info">
+                  <h3>Sova</h3>
+                  <p>Iniciador especialista em reconhecimento e informação</p>
+                  <div class="agent-abilities">
+                    <span class="ability">Flecha Chocante</span>
+                    <span class="ability">Drone Coruja</span>
+                    <span class="ability">Flecha Rastreadora</span>
+                    <span class="ability ultimate">Fúria do Caçador</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Agente Sage -->
+              <div class="agent-card" data-role="sentinel">
+                <div
+                  class="agent-image"
+                  style="
+                    background-image: url('../assets/cards/sage-card.jpeg');
+                  "
+                >
+                  <div class="agent-role sentinel">Sentinela</div>
+                  <div class="agent-overlay">
+                    <button class="learn-btn">
+                      <i class="fas fa-play"></i> Aprender
+                    </button>
+                  </div>
+                </div>
+                <div class="agent-info">
+                  <h3>Sage</h3>
+                  <p>Sentinela focada em suporte e controle de área</p>
+                  <div class="agent-abilities">
+                    <span class="ability">Orbe Curativo</span>
+                    <span class="ability">Orbe de Lentidão</span>
+                    <span class="ability">Parede de Gelo</span>
+                    <span class="ability ultimate">Ressureição</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Agente Omen -->
+              <div class="agent-card" data-role="controller">
+                <div
+                  class="agent-image"
+                  style="
+                    background-image: url('../assets/cards/omen-card.webp');
+                  "
+                >
+                  <div class="agent-role controller">Controlador</div>
+                  <div class="agent-overlay">
+                    <button class="learn-btn">
+                      <i class="fas fa-play"></i> Aprender
+                    </button>
+                  </div>
+                </div>
+                <div class="agent-info">
+                  <h3>Omen</h3>
+                  <p>Controlador sombrio especialista em smokes e teleporte</p>
+                  <div class="agent-abilities">
+                    <span class="ability">Manto Sombrio</span>
+                    <span class="ability">Paranoia</span>
+                    <span class="ability">Passos Tenebrosos</span>
+                    <span class="ability ultimate">Salto das Sombras</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>

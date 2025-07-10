@@ -5,12 +5,444 @@
 @use "hero";
 @use "../layout/topbar";
 @use "cards";
+@use "pages";
 
 // IMPORTA OS NOVOS MÓDULOS
 @use "../utils/animations";
 @use "../utils/scrollbar";
 @use "../utils/responsive";
 @use "light-theme";
+
+// Arquivo custom para personalizações específicas
+
+// ===== MELHORIAS ESPECÍFICAS PARA TEMA CLARO =====
+
+// Controles de formulário no tema claro
+.light-theme {
+  
+  // Inputs e controles
+  .form-control, .form-select, .form-check-input {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(145, 70, 255, 0.2) !important;
+    color: #1e293b !important;
+    
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      border-color: var(--accent-primary) !important;
+      box-shadow: 0 0 0 0.2rem rgba(145, 70, 255, 0.25) !important;
+    }
+    
+    &::placeholder {
+      color: #64748b !important;
+    }
+  }
+
+  // Dropdowns específicos
+  .dropdown-toggle {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(145, 70, 255, 0.2) !important;
+    color: #1e293b !important;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      border-color: var(--accent-primary) !important;
+    }
+    
+    &.show {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      border-color: var(--accent-primary) !important;
+      box-shadow: 0 0 0 0.2rem rgba(145, 70, 255, 0.25) !important;
+    }
+  }
+
+  .dropdown-item {
+    color: #1e293b !important;
+    
+    &:hover, &:focus {
+      background-color: rgba(145, 70, 255, 0.1) !important;
+      color: var(--accent-primary) !important;
+    }
+    
+    &.active {
+      background-color: var(--accent-primary) !important;
+      color: white !important;
+    }
+  }
+
+  // Checkboxes e radios
+  .form-check-input {
+    &:checked {
+      background-color: var(--accent-primary) !important;
+      border-color: var(--accent-primary) !important;
+    }
+    
+    &:focus {
+      border-color: var(--accent-primary) !important;
+      box-shadow: 0 0 0 0.2rem rgba(145, 70, 255, 0.25) !important;
+    }
+  }
+
+  // Switches (toggles)
+  .form-switch .form-check-input {
+    &:checked {
+      background-color: var(--accent-primary) !important;
+      border-color: var(--accent-primary) !important;
+    }
+  }
+
+  // Tabs
+  .nav-tabs {
+    .nav-link {
+      color: #64748b !important;
+      border-color: rgba(145, 70, 255, 0.2) !important;
+      
+      &:hover {
+        border-color: var(--accent-primary) !important;
+        color: var(--accent-primary) !important;
+      }
+      
+      &.active {
+        color: var(--accent-primary) !important;
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        border-color: var(--accent-primary) !important;
+        border-bottom-color: transparent !important;
+      }
+    }
+  }
+
+  // Accordions
+  .accordion-item {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(145, 70, 255, 0.2) !important;
+  }
+
+  .accordion-button {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    color: #1e293b !important;
+    
+    &:not(.collapsed) {
+      background-color: rgba(145, 70, 255, 0.1) !important;
+      color: var(--accent-primary) !important;
+    }
+    
+    &:focus {
+      border-color: var(--accent-primary) !important;
+      box-shadow: 0 0 0 0.2rem rgba(145, 70, 255, 0.25) !important;
+    }
+  }
+
+  // Modais
+  .modal-content {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(145, 70, 255, 0.2) !important;
+    backdrop-filter: blur(10px);
+  }
+
+  .modal-header {
+    border-bottom: 1px solid rgba(145, 70, 255, 0.2) !important;
+    
+    .modal-title {
+      color: #1e293b !important;
+    }
+    
+    .btn-close {
+      filter: invert(1) brightness(0.8);
+    }
+  }
+
+  .modal-body {
+    color: #1e293b !important;
+  }
+
+  .modal-footer {
+    border-top: 1px solid rgba(145, 70, 255, 0.2) !important;
+  }
+
+  // Alertas
+  .alert {
+    border: 1px solid rgba(145, 70, 255, 0.2) !important;
+    
+    &.alert-primary {
+      background-color: rgba(145, 70, 255, 0.1) !important;
+      color: var(--accent-primary) !important;
+      border-color: var(--accent-primary) !important;
+    }
+    
+    &.alert-success {
+      background-color: rgba(16, 185, 129, 0.1) !important;
+      color: #065f46 !important;
+      border-color: #10b981 !important;
+    }
+    
+    &.alert-warning {
+      background-color: rgba(245, 158, 11, 0.1) !important;
+      color: #92400e !important;
+      border-color: #f59e0b !important;
+    }
+    
+    &.alert-danger {
+      background-color: rgba(239, 68, 68, 0.1) !important;
+      color: #991b1b !important;
+      border-color: #ef4444 !important;
+    }
+  }
+
+  // Tooltips no tema claro
+  .tooltip-inner {
+    background-color: #1f2937 !important;
+    color: white !important;
+  }
+
+  .tooltip .tooltip-arrow {
+    &::before {
+      border-top-color: #1f2937 !important;
+    }
+  }
+
+  // Popovers
+  .popover {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(145, 70, 255, 0.2) !important;
+    backdrop-filter: blur(10px);
+  }
+
+  .popover-header {
+    background-color: rgba(145, 70, 255, 0.1) !important;
+    color: var(--accent-primary) !important;
+    border-bottom: 1px solid rgba(145, 70, 255, 0.2) !important;
+  }
+
+  .popover-body {
+    color: #1e293b !important;
+  }
+
+  // Breadcrumbs
+  .breadcrumb {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(145, 70, 255, 0.2) !important;
+  }
+
+  .breadcrumb-item {
+    color: #64748b !important;
+    
+    &.active {
+      color: var(--accent-primary) !important;
+    }
+    
+    a {
+      color: var(--accent-primary) !important;
+      
+      &:hover {
+        color: #7c3aed !important;
+      }
+    }
+  }
+
+  // Progress bars
+  .progress {
+    background-color: rgba(226, 232, 240, 0.8) !important;
+    border: 1px solid rgba(145, 70, 255, 0.2) !important;
+  }
+
+  .progress-bar {
+    background-color: var(--accent-primary) !important;
+  }
+
+  // Spinners
+  .spinner-border {
+    color: var(--accent-primary) !important;
+  }
+
+  .spinner-grow {
+    color: var(--accent-primary) !important;
+  }
+
+  // Toasts
+  .toast {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(145, 70, 255, 0.2) !important;
+    backdrop-filter: blur(10px);
+  }
+
+  .toast-header {
+    background-color: rgba(145, 70, 255, 0.1) !important;
+    color: var(--accent-primary) !important;
+    border-bottom: 1px solid rgba(145, 70, 255, 0.2) !important;
+  }
+
+  .toast-body {
+    color: #1e293b !important;
+  }
+
+  // Cards específicos
+  .card {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(145, 70, 255, 0.2) !important;
+    backdrop-filter: blur(10px);
+  }
+
+  .card-header {
+    background-color: rgba(145, 70, 255, 0.1) !important;
+    color: var(--accent-primary) !important;
+    border-bottom: 1px solid rgba(145, 70, 255, 0.2) !important;
+  }
+
+  .card-footer {
+    background-color: rgba(145, 70, 255, 0.05) !important;
+    border-top: 1px solid rgba(145, 70, 255, 0.2) !important;
+  }
+
+  // List groups
+  .list-group {
+    .list-group-item {
+      background-color: rgba(255, 255, 255, 0.9) !important;
+      border: 1px solid rgba(145, 70, 255, 0.2) !important;
+      color: #1e293b !important;
+      
+      &.active {
+        background-color: var(--accent-primary) !important;
+        border-color: var(--accent-primary) !important;
+        color: white !important;
+      }
+      
+      &:hover {
+        background-color: rgba(145, 70, 255, 0.1) !important;
+        color: var(--accent-primary) !important;
+      }
+    }
+  }
+
+  // Paginação
+  .pagination {
+    .page-link {
+      color: var(--accent-primary) !important;
+      background-color: rgba(255, 255, 255, 0.9) !important;
+      border: 1px solid rgba(145, 70, 255, 0.2) !important;
+      
+      &:hover {
+        color: #7c3aed !important;
+        background-color: rgba(145, 70, 255, 0.1) !important;
+        border-color: var(--accent-primary) !important;
+      }
+    }
+    
+    .page-item.active .page-link {
+      background-color: var(--accent-primary) !important;
+      border-color: var(--accent-primary) !important;
+      color: white !important;
+    }
+    
+    .page-item.disabled .page-link {
+      color: #94a3b8 !important;
+      background-color: rgba(248, 250, 252, 0.9) !important;
+      border-color: rgba(145, 70, 255, 0.1) !important;
+    }
+  }
+
+  // Badges melhorados
+  .badge {
+    &.bg-primary {
+      background-color: var(--accent-primary) !important;
+      color: white !important;
+    }
+    
+    &.bg-secondary {
+      background-color: #64748b !important;
+      color: white !important;
+    }
+    
+    &.bg-success {
+      background-color: #10b981 !important;
+      color: white !important;
+    }
+    
+    &.bg-warning {
+      background-color: #f59e0b !important;
+      color: white !important;
+    }
+    
+    &.bg-danger {
+      background-color: #ef4444 !important;
+      color: white !important;
+    }
+  }
+
+  // Melhorias gerais de contraste
+  .text-muted {
+    color: #64748b !important;
+  }
+
+  .text-primary {
+    color: var(--accent-primary) !important;
+  }
+
+  .text-secondary {
+    color: #475569 !important;
+  }
+
+  .text-success {
+    color: #059669 !important;
+  }
+
+  .text-warning {
+    color: #d97706 !important;
+  }
+
+  .text-danger {
+    color: #dc2626 !important;
+  }
+
+  .text-info {
+    color: #0284c7 !important;
+  }
+
+  .text-light {
+    color: #f1f5f9 !important;
+  }
+
+  .text-dark {
+    color: #1e293b !important;
+  }
+
+  // Melhorias para componentes específicos do projeto
+  .controls-bar {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(145, 70, 255, 0.2) !important;
+  }
+
+  .filters-dropdown, .sort-dropdown, .view-toggle {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(145, 70, 255, 0.2) !important;
+    color: #1e293b !important;
+  }
+
+  .search-filters {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(145, 70, 255, 0.2) !important;
+  }
+
+  .table-container {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(145, 70, 255, 0.2) !important;
+  }
+
+  .table {
+    th {
+      background-color: rgba(145, 70, 255, 0.1) !important;
+      color: var(--accent-primary) !important;
+      border-color: rgba(145, 70, 255, 0.2) !important;
+    }
+    
+    td {
+      color: #1e293b !important;
+      border-color: rgba(145, 70, 255, 0.1) !important;
+    }
+    
+    tr:hover {
+      background-color: rgba(145, 70, 255, 0.05) !important;
+    }
+  }
+}
 
 // ===== REGRAS GLOBAIS =====
 body {

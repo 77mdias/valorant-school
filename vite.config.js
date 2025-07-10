@@ -18,7 +18,17 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: 'src/index.html'
+        main: 'src/index.html',
+        agentes: 'src/pages/agentes.html',
+        funcoes: 'src/pages/funcoes.html',
+        mapas: 'src/pages/mapas.html',
+        configuracoes: 'src/pages/configuracoes.html',
+        perfil: 'src/pages/perfil.html',
+        progresso: 'src/pages/progresso.html',
+        favoritas: 'src/pages/favoritas.html',
+        certificados: 'src/pages/certificados.html',
+        rank: 'src/pages/rank.html',
+        estatisticas: 'src/pages/estatisticas.html'
       }
     },
     outDir: '../dist',

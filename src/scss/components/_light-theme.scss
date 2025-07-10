@@ -170,4 +170,286 @@
   .nav-links li {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  // ===== MELHORIAS ESPECÍFICAS PARA ÍCONES E CONTRASTE =====
+  
+  // Ícones em geral - melhor contraste
+  i, .fas, .far, .fab, .fal {
+    color: var(--text-primary);
+    
+    &.text-warning {
+      color: #f59e0b !important;
+    }
+    
+    &.text-primary {
+      color: var(--accent-primary) !important;
+    }
+    
+    &.text-success {
+      color: #10b981 !important;
+    }
+    
+    &.text-danger {
+      color: #ef4444 !important;
+    }
+    
+    &.text-info {
+      color: #0ea5e9 !important;
+    }
+  }
+
+  // Conquistas - melhor contraste para ícones
+  .achievements, .recent-achievements, .progress-achievements {
+    .achievement-card {
+      .achievement-icon {
+        // Garantir contraste adequado para todos os estados
+        &:not([style*="background"]) {
+          background: linear-gradient(135deg, var(--accent-primary), #7c3aed) !important;
+          color: white !important;
+        }
+      }
+      
+      &.earned .achievement-icon {
+        background: linear-gradient(135deg, #10b981, #059669) !important;
+        color: white !important;
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4) !important;
+      }
+      
+      &.progress .achievement-icon {
+        background: linear-gradient(135deg, var(--accent-primary), #7c3aed) !important;
+        color: white !important;
+        box-shadow: 0 8px 25px rgba(145, 70, 255, 0.4) !important;
+      }
+      
+      &.locked .achievement-icon {
+        background: linear-gradient(135deg, #6b7280, #4b5563) !important;
+        color: white !important;
+      }
+    }
+  }
+
+  // Cards de perfil - melhor contraste
+  .profile-overview {
+    .profile-avatar .avatar-circle {
+      background: linear-gradient(135deg, var(--accent-primary), #7c3aed) !important;
+      color: white !important;
+    }
+    
+    .change-avatar-btn {
+      background-color: var(--accent-primary) !important;
+      color: white !important;
+    }
+  }
+
+  // Cards de certificados
+  .certificates-summary, .recent-certificates {
+    .summary-icon, .certificate-icon {
+      background: linear-gradient(135deg, var(--accent-primary), #7c3aed) !important;
+      color: white !important;
+    }
+  }
+
+  // Cards de rank
+  .current-rank .rank-icon {
+    background: linear-gradient(135deg, #0ea5e9, #0284c7) !important;
+    color: white !important;
+    box-shadow: 0 10px 30px rgba(14, 165, 233, 0.4) !important;
+  }
+
+  .ranking-system .tier-icon,
+  .next-rank-requirements .requirement-icon,
+  .leaderboard .player-avatar {
+    background: linear-gradient(135deg, var(--accent-primary), #7c3aed) !important;
+    color: white !important;
+  }
+
+  // Cards de estatísticas
+  .general-stats .stat-icon,
+  .category-performance .performance-card .card-icon,
+  .comparison .comparison-card .chart-icon {
+    background: linear-gradient(135deg, var(--accent-primary), #7c3aed) !important;
+    color: white !important;
+  }
+
+  // Dashboard de progresso
+  .progress-dashboard .card-icon {
+    background: linear-gradient(135deg, var(--accent-primary), #7c3aed) !important;
+    color: white !important;
+  }
+
+  // Trilha de aprendizado - ícones
+  .learning-path .path-item {
+    .path-icon {
+      color: white !important;
+      
+      &[style*="background-color: #28a745"], &[style*="background-color: var(--accent-primary)"] {
+        background: linear-gradient(135deg, var(--accent-primary), #7c3aed) !important;
+      }
+      
+      &[style*="background-color: var(--text-secondary)"] {
+        background: linear-gradient(135deg, #6b7280, #4b5563) !important;
+      }
+    }
+    
+    &.completed .path-icon {
+      background: linear-gradient(135deg, #10b981, #059669) !important;
+    }
+    
+    &.in-progress .path-icon {
+      background: linear-gradient(135deg, var(--accent-primary), #7c3aed) !important;
+    }
+    
+    &.locked .path-icon {
+      background: linear-gradient(135deg, #6b7280, #4b5563) !important;
+    }
+  }
+
+  // Cards de favoritas - ícones
+  .favorites-grid {
+    .favorite-btn {
+      background-color: rgba(0, 0, 0, 0.7) !important;
+      color: white !important;
+      
+      &.favorited {
+        color: #ef4444 !important;
+      }
+    }
+    
+    .play-btn {
+      background-color: var(--accent-primary) !important;
+      color: white !important;
+    }
+  }
+
+  // Playlists - ícones
+  .playlists-section {
+    .playlist-icon, .create-icon {
+      background: linear-gradient(135deg, var(--accent-primary), #7c3aed) !important;
+      color: white !important;
+    }
+    
+    .create-new:hover .create-icon {
+      background: linear-gradient(135deg, var(--accent-primary), #7c3aed) !important;
+      color: white !important;
+    }
+  }
+
+  // Agentes - ícones de função
+  .agents-grid .agent-card .agent-role {
+    &.duelist {
+      background-color: rgba(220, 53, 69, 0.9) !important;
+      color: white !important;
+    }
+    
+    &.initiator {
+      background-color: rgba(245, 158, 11, 0.9) !important;
+      color: white !important;
+    }
+    
+    &.controller {
+      background-color: rgba(14, 165, 233, 0.9) !important;
+      color: white !important;
+    }
+    
+    &.sentinel {
+      background-color: rgba(16, 185, 129, 0.9) !important;
+      color: white !important;
+    }
+  }
+
+  // Funções - ícones
+  .roles-grid .role-card .role-icon {
+    background: linear-gradient(135deg, var(--accent-primary), #7c3aed) !important;
+    color: white !important;
+  }
+
+  // Mapas - elementos visuais
+  .maps-grid .map-card .map-overlay .learn-btn {
+    background-color: var(--accent-primary) !important;
+    color: white !important;
+  }
+
+  // Status indicators
+  .status-indicator .status-dot {
+    border: 2px solid white !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  // Botões de ação - melhor contraste
+  .btn-primary, .create-playlist-btn {
+    background-color: var(--accent-primary) !important;
+    color: white !important;
+    border: none !important;
+    
+    &:hover {
+      background-color: #7c3aed !important;
+      color: white !important;
+    }
+  }
+
+  // Badges e etiquetas
+  .difficulty-badge, .category-badge, .level-badge, .status-badge {
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    
+    &.easy {
+      background-color: #dcfce7 !important;
+      color: #166534 !important;
+    }
+    
+    &.medium {
+      background-color: #fef3c7 !important;
+      color: #92400e !important;
+    }
+    
+    &.hard {
+      background-color: #fee2e2 !important;
+      color: #991b1b !important;
+    }
+  }
+
+  // Ícones da timeline (rank)
+  .rank-history .timeline-icon {
+    background: linear-gradient(135deg, var(--accent-primary), #7c3aed) !important;
+    color: white !important;
+    border: 4px solid white !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  // Metas e objetivos
+  .goals .goal-card .goal-icon {
+    background: linear-gradient(135deg, var(--accent-primary), #7c3aed) !important;
+    color: white !important;
+  }
+
+  // Tooltips no tema claro
+  .tooltip .tooltip-content {
+    background-color: #1f2937 !important;
+    color: white !important;
+    border: 1px solid #374151 !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+    
+    &::after {
+      border-top-color: #374151 !important;
+    }
+  }
+
+  // Empty states
+  .empty-state .empty-icon {
+    background: linear-gradient(135deg, #e5e7eb, #d1d5db) !important;
+    color: #6b7280 !important;
+  }
+
+  // Melhorar contraste de textos secundários
+  .text-secondary, .progress-text, .stat-label, .category-name {
+    color: #475569 !important;
+  }
+
+  // Melhorar contraste de links
+  a {
+    color: var(--accent-primary) !important;
+    
+    &:hover {
+      color: #7c3aed !important;
+    }
+  }
 }

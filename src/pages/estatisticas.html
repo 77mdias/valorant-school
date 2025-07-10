@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estatísticas - Valorant Ace School</title>
+    <link
+      rel="icon"
+      href="../assets/logoPage/Valorant-Academy.png"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="vw-100 vh-100">
+    <div id="" class="">
+      <div class="row">
+        <!-- Topbar estilo Twitch -->
+        <nav class="navbar col-12 col-lg-12 p-0 navbar-expand-lg">
+          <div class="container-fluid" id="topBar">
+            <div class="topbar justify-content-between gap-2" id="navbarNav">
+              <!-- BOTÃO HAMBURGER (só aparece em mobile) -->
+              <button class="hamburger-btn d-lg-none" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+              </button>
+
+              <!-- LOGO -->
+              <div class="logo">
+                <img
+                  src="../assets/logoPage/Valorant-Academy.png"
+                  alt="Valorant Academy"
+                />
+                <img src="../assets/logoPage/ACE.png" alt="ACE" />
+              </div>
+
+              <!-- BARRA DE PESQUISA -->
+              <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar..." />
+              </div>
+
+              <!-- BOTÕES -->
+              <div class="user-actions">
+                <!-- BOTÃO NOTIFICAÇÕES -->
+                <i class="fas fa-bell"></i>
+
+                <!-- DROPDOWN -->
+                <div class="dropdown">
+                  <button
+                    class="btn dropdownProfile dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-circle-user"></i>
+                  </button>
+                  <!-- DROPDOWN MENU -->
+                  <ul
+                    class="dropdown-menu dropdown-menu-dark dropdown-menu-end mt-3"
+                  >
+                    <!-- BOTÃO PERFIL -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="perfil.html"
+                      >
+                        <i class="fas fa-user-circle"></i>
+                        Meu Perfil
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO PROGRESSO -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="progresso.html"
+                      >
+                        <i class="fas fa-chart-line text-success"></i>
+                        Meu Progresso
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO FAVORITOS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="favoritas.html"
+                      >
+                        <i class="fas fa-heart text-danger"></i>
+                        Aulas Favoritas
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO CERTIFICADOS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="certificados.html"
+                      >
+                        <i class="fas fa-certificate text-warning"></i>
+                        Certificados
+                      </a>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO RANK/ELO -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="rank.html"
+                      >
+                        <i class="fas fa-trophy text-warning"></i>
+                        Meu Rank:
+                        <span class="badge bg-purple ms-1">Diamante</span>
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO ESTATÍSTICAS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="estatisticas.html"
+                      >
+                        <i class="fas fa-chart-bar text-info"></i>
+                        Estatísticas
+                      </a>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO CONFIGURAÇÕES -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="configuracoes.html"
+                      >
+                        <i class="fas fa-cog text-secondary"></i>
+                        Configurações
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO TEMA -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        type="button"
+                        data-theme-toggle
+                      >
+                        <i class="fas fa-moon text-warning"></i>
+                        <span class="theme-text">Tema Escuro</span>
+                      </button>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO SAIR -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5 text-danger"
+                        type="button"
+                      >
+                        <i class="fas fa-sign-out-alt"></i>
+                        Sair
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Overlay para mobile -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Sidebar com botão de fechar -->
+        <aside class="sidebar col-12 col-lg-3 col-xl-3 col-xxl-2" id="sidebar">
+          <!-- Botão fechar só aparece em mobile -->
+          <button class="close-btn d-lg-none" id="sidebarClose">
+            <i class="fas fa-times"></i>
+          </button>
+
+          <!-- MENU -->
+          <ul class="nav-links">
+            <div class="search-bar d-lg-none mb-2">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Buscar..." />
+            </div>
+            <li>
+              <a href="../index.html"> <i class="fas fa-home"></i> Home </a>
+            </li>
+            <li>
+              <a href="agentes.html">
+                <i class="fas fa-user-secret"></i> Agentes
+              </a>
+            </li>
+            <li>
+              <a href="funcoes.html">
+                <i class="fas fa-shield-alt"></i> Funções
+              </a>
+            </li>
+            <li>
+              <a href="mapas.html"> <i class="fas fa-map"></i> Mapas </a>
+            </li>
+            <li>
+              <a href="configuracoes.html">
+                <i class="fas fa-cog"></i> Configurações
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content col-12 col-lg-9 col-xl-9 col-xxl-10">
+          <!-- Hero Section -->
+          <section
+            class="hero"
+            style="background-image: url('../assets/hero/valorant-banner.avif')"
+          >
+            <div class="hero-content">
+              <h1>Estatísticas</h1>
+              <p>Análise detalhada do seu desempenho e progresso</p>
+              <button class="btn-play">
+                Ver Relatório <i class="fas fa-chart-bar"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- Estatísticas Gerais -->
+          <section class="general-stats">
+            <h2>Estatísticas Gerais</h2>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="stat-content">
+                  <h3>87</h3>
+                  <p>Aulas Concluídas</p>
+                  <div class="stat-trend positive">
+                    <i class="fas fa-arrow-up"></i>
+                    <span>+12 esta semana</span>
+                  </div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-content">
+                  <h3>156h</h3>
+                  <p>Tempo Total de Estudo</p>
+                  <div class="stat-trend positive">
+                    <i class="fas fa-arrow-up"></i>
+                    <span>+24h este mês</span>
+                  </div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <div class="stat-content">
+                  <h3>24</h3>
+                  <p>Certificados Conquistados</p>
+                  <div class="stat-trend positive">
+                    <i class="fas fa-arrow-up"></i>
+                    <span>+3 este mês</span>
+                  </div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-fire"></i>
+                </div>
+                <div class="stat-content">
+                  <h3>12</h3>
+                  <p>Sequência Atual</p>
+                  <div class="stat-trend neutral">
+                    <i class="fas fa-minus"></i>
+                    <span>Estável</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Gráfico de Atividade -->
+          <section class="activity-chart">
+            <h2>Atividade nos Últimos 30 Dias</h2>
+            <div class="chart-container">
+              <div class="chart-controls">
+                <button class="chart-btn active" data-period="7">7 dias</button>
+                <button class="chart-btn" data-period="30">30 dias</button>
+                <button class="chart-btn" data-period="90">90 dias</button>
+              </div>
+              <div class="activity-heatmap">
+                <div class="heatmap-header">
+                  <span>Dom</span>
+                  <span>Seg</span>
+                  <span>Ter</span>
+                  <span>Qua</span>
+                  <span>Qui</span>
+                  <span>Sex</span>
+                  <span>Sáb</span>
+                </div>
+                <div class="heatmap-grid">
+                  <!-- Semana 1 -->
+                  <div class="heatmap-cell activity-low"></div>
+                  <div class="heatmap-cell activity-high"></div>
+                  <div class="heatmap-cell activity-medium"></div>
+                  <div class="heatmap-cell activity-high"></div>
+                  <div class="heatmap-cell activity-low"></div>
+                  <div class="heatmap-cell activity-medium"></div>
+                  <div class="heatmap-cell activity-high"></div>
+                  <!-- Semana 2 -->
+                  <div class="heatmap-cell activity-medium"></div>
+                  <div class="heatmap-cell activity-high"></div>
+                  <div class="heatmap-cell activity-high"></div>
+                  <div class="heatmap-cell activity-medium"></div>
+                  <div class="heatmap-cell activity-high"></div>
+                  <div class="heatmap-cell activity-low"></div>
+                  <div class="heatmap-cell activity-medium"></div>
+                  <!-- Semana 3 -->
+                  <div class="heatmap-cell activity-high"></div>
+                  <div class="heatmap-cell activity-medium"></div>
+                  <div class="heatmap-cell activity-high"></div>
+                  <div class="heatmap-cell activity-high"></div>
+                  <div class="heatmap-cell activity-medium"></div>
+                  <div class="heatmap-cell activity-high"></div>
+                  <div class="heatmap-cell activity-low"></div>
+                  <!-- Semana 4 -->
+                  <div class="heatmap-cell activity-medium"></div>
+                  <div class="heatmap-cell activity-high"></div>
+                  <div class="heatmap-cell activity-high"></div>
+                  <div class="heatmap-cell activity-high"></div>
+                  <div class="heatmap-cell activity-medium"></div>
+                  <div class="heatmap-cell activity-high"></div>
+                  <div class="heatmap-cell activity-high"></div>
+                </div>
+                <div class="heatmap-legend">
+                  <span>Menos</span>
+                  <div class="legend-scale">
+                    <div class="legend-item activity-none"></div>
+                    <div class="legend-item activity-low"></div>
+                    <div class="legend-item activity-medium"></div>
+                    <div class="legend-item activity-high"></div>
+                  </div>
+                  <span>Mais</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Performance por Categoria -->
+          <section class="category-performance">
+            <h2>Performance por Categoria</h2>
+            <div class="performance-grid">
+              <div class="performance-card">
+                <div class="performance-header">
+                  <h3>Agentes</h3>
+                  <div class="performance-score">85%</div>
+                </div>
+                <div class="performance-chart">
+                  <div class="chart-bar" style="height: 85%"></div>
+                </div>
+                <div class="performance-details">
+                  <div class="detail-item">
+                    <span>Duelistas</span>
+                    <span>95%</span>
+                  </div>
+                  <div class="detail-item">
+                    <span>Controladores</span>
+                    <span>80%</span>
+                  </div>
+                  <div class="detail-item">
+                    <span>Iniciadores</span>
+                    <span>75%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="performance-card">
+                <div class="performance-header">
+                  <h3>Mapas</h3>
+                  <div class="performance-score">70%</div>
+                </div>
+                <div class="performance-chart">
+                  <div class="chart-bar" style="height: 70%"></div>
+                </div>
+                <div class="performance-details">
+                  <div class="detail-item">
+                    <span>Bind</span>
+                    <span>90%</span>
+                  </div>
+                  <div class="detail-item">
+                    <span>Ascent</span>
+                    <span>75%</span>
+                  </div>
+                  <div class="detail-item">
+                    <span>Haven</span>
+                    <span>65%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="performance-card">
+                <div class="performance-header">
+                  <h3>Estratégias</h3>
+                  <div class="performance-score">78%</div>
+                </div>
+                <div class="performance-chart">
+                  <div class="chart-bar" style="height: 78%"></div>
+                </div>
+                <div class="performance-details">
+                  <div class="detail-item">
+                    <span>Execuções</span>
+                    <span>85%</span>
+                  </div>
+                  <div class="detail-item">
+                    <span>Retakes</span>
+                    <span>70%</span>
+                  </div>
+                  <div class="detail-item">
+                    <span>Eco Rounds</span>
+                    <span>60%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Comparação com Outros Estudantes -->
+          <section class="comparison">
+            <h2>Comparação com Outros Estudantes</h2>
+            <div class="comparison-grid">
+              <div class="comparison-card">
+                <h3>Tempo de Estudo Médio</h3>
+                <div class="comparison-chart">
+                  <div class="comparison-bar">
+                    <div class="bar-fill you" style="width: 85%">
+                      <span>Você: 156h</span>
+                    </div>
+                  </div>
+                  <div class="comparison-bar">
+                    <div class="bar-fill average" style="width: 65%">
+                      <span>Média: 120h</span>
+                    </div>
+                  </div>
+                </div>
+                <p class="comparison-result positive">
+                  <i class="fas fa-arrow-up"></i>
+                  30% acima da média
+                </p>
+              </div>
+
+              <div class="comparison-card">
+                <h3>Taxa de Conclusão</h3>
+                <div class="comparison-chart">
+                  <div class="comparison-bar">
+                    <div class="bar-fill you" style="width: 94%">
+                      <span>Você: 94%</span>
+                    </div>
+                  </div>
+                  <div class="comparison-bar">
+                    <div class="bar-fill average" style="width: 78%">
+                      <span>Média: 78%</span>
+                    </div>
+                  </div>
+                </div>
+                <p class="comparison-result positive">
+                  <i class="fas fa-arrow-up"></i>
+                  16% acima da média
+                </p>
+              </div>
+
+              <div class="comparison-card">
+                <h3>Sequência Máxima</h3>
+                <div class="comparison-chart">
+                  <div class="comparison-bar">
+                    <div class="bar-fill you" style="width: 60%">
+                      <span>Você: 12 dias</span>
+                    </div>
+                  </div>
+                  <div class="comparison-bar">
+                    <div class="bar-fill average" style="width: 80%">
+                      <span>Média: 16 dias</span>
+                    </div>
+                  </div>
+                </div>
+                <p class="comparison-result negative">
+                  <i class="fas fa-arrow-down"></i>
+                  25% abaixo da média
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Estatísticas Detalhadas -->
+          <section class="detailed-stats">
+            <h2>Estatísticas Detalhadas</h2>
+            <div class="stats-table">
+              <div class="table-header">
+                <h3>Métricas de Aprendizado</h3>
+                <div class="table-filters">
+                  <button class="filter-btn active" data-filter="all">
+                    Todas
+                  </button>
+                  <button class="filter-btn" data-filter="week">
+                    Esta Semana
+                  </button>
+                  <button class="filter-btn" data-filter="month">
+                    Este Mês
+                  </button>
+                </div>
+              </div>
+              <div class="stats-rows">
+                <div class="stats-row">
+                  <div class="stat-label">Média de Horas por Dia</div>
+                  <div class="stat-value">5.2h</div>
+                  <div class="stat-change positive">+0.8h</div>
+                </div>
+                <div class="stats-row">
+                  <div class="stat-label">Aulas por Semana</div>
+                  <div class="stat-value">12</div>
+                  <div class="stat-change positive">+3</div>
+                </div>
+                <div class="stats-row">
+                  <div class="stat-label">Tempo Médio por Aula</div>
+                  <div class="stat-value">18min</div>
+                  <div class="stat-change negative">-2min</div>
+                </div>
+                <div class="stats-row">
+                  <div class="stat-label">Taxa de Aprovação</div>
+                  <div class="stat-value">94%</div>
+                  <div class="stat-change positive">+2%</div>
+                </div>
+                <div class="stats-row">
+                  <div class="stat-label">Pontuação Média</div>
+                  <div class="stat-value">87/100</div>
+                  <div class="stat-change positive">+5</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Metas e Objetivos -->
+          <section class="goals">
+            <h2>Metas e Objetivos</h2>
+            <div class="goals-grid">
+              <div class="goal-card">
+                <div class="goal-header">
+                  <h3>Meta Semanal</h3>
+                  <div class="goal-progress">
+                    <div class="progress-circle">
+                      <div class="circle-progress" data-progress="80">
+                        <span class="progress-number">80%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="goal-details">
+                  <p>Completar 10 aulas</p>
+                  <div class="goal-status">
+                    <span>8 de 10 concluídas</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="goal-card">
+                <div class="goal-header">
+                  <h3>Meta Mensal</h3>
+                  <div class="goal-progress">
+                    <div class="progress-circle">
+                      <div class="circle-progress" data-progress="65">
+                        <span class="progress-number">65%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="goal-details">
+                  <p>Conquistar 3 certificados</p>
+                  <div class="goal-status">
+                    <span>2 de 3 conquistados</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="goal-card">
+                <div class="goal-header">
+                  <h3>Meta Anual</h3>
+                  <div class="goal-progress">
+                    <div class="progress-circle">
+                      <div class="circle-progress" data-progress="45">
+                        <span class="progress-number">45%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="goal-details">
+                  <p>Alcançar rank Radiante</p>
+                  <div class="goal-status">
+                    <span>Diamante 2 atual</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>

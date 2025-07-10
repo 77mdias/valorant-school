@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Progresso - Valorant Ace School</title>
+    <link
+      rel="icon"
+      href="../assets/logoPage/Valorant-Academy.png"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="vw-100 vh-100">
+    <div id="" class="">
+      <div class="row">
+        <!-- Topbar estilo Twitch -->
+        <nav class="navbar col-12 col-lg-12 p-0 navbar-expand-lg">
+          <div class="container-fluid" id="topBar">
+            <div class="topbar justify-content-between gap-2" id="navbarNav">
+              <!-- BOTÃO HAMBURGER (só aparece em mobile) -->
+              <button class="hamburger-btn d-lg-none" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+              </button>
+
+              <!-- LOGO -->
+              <div class="logo">
+                <img
+                  src="../assets/logoPage/Valorant-Academy.png"
+                  alt="Valorant Academy"
+                />
+                <img src="../assets/logoPage/ACE.png" alt="ACE" />
+              </div>
+
+              <!-- BARRA DE PESQUISA -->
+              <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar..." />
+              </div>
+
+              <!-- BOTÕES -->
+              <div class="user-actions">
+                <!-- BOTÃO NOTIFICAÇÕES -->
+                <i class="fas fa-bell"></i>
+
+                <!-- DROPDOWN -->
+                <div class="dropdown">
+                  <button
+                    class="btn dropdownProfile dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-circle-user"></i>
+                  </button>
+                  <!-- DROPDOWN MENU -->
+                  <ul
+                    class="dropdown-menu dropdown-menu-dark dropdown-menu-end mt-3"
+                  >
+                    <!-- BOTÃO PERFIL -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="perfil.html"
+                      >
+                        <i class="fas fa-user-circle"></i>
+                        Meu Perfil
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO PROGRESSO -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="progresso.html"
+                      >
+                        <i class="fas fa-chart-line text-success"></i>
+                        Meu Progresso
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO FAVORITOS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="favoritas.html"
+                      >
+                        <i class="fas fa-heart text-danger"></i>
+                        Aulas Favoritas
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO CERTIFICADOS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="certificados.html"
+                      >
+                        <i class="fas fa-certificate text-warning"></i>
+                        Certificados
+                      </a>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO RANK/ELO -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="rank.html"
+                      >
+                        <i class="fas fa-trophy text-warning"></i>
+                        Meu Rank:
+                        <span class="badge bg-purple ms-1">Diamante</span>
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO ESTATÍSTICAS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="estatisticas.html"
+                      >
+                        <i class="fas fa-chart-bar text-info"></i>
+                        Estatísticas
+                      </a>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO CONFIGURAÇÕES -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="configuracoes.html"
+                      >
+                        <i class="fas fa-cog text-secondary"></i>
+                        Configurações
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO TEMA -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        type="button"
+                        data-theme-toggle
+                      >
+                        <i class="fas fa-moon text-warning"></i>
+                        <span class="theme-text">Tema Escuro</span>
+                      </button>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO SAIR -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5 text-danger"
+                        type="button"
+                      >
+                        <i class="fas fa-sign-out-alt"></i>
+                        Sair
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Overlay para mobile -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Sidebar com botão de fechar -->
+        <aside class="sidebar col-12 col-lg-3 col-xl-3 col-xxl-2" id="sidebar">
+          <!-- Botão fechar só aparece em mobile -->
+          <button class="close-btn d-lg-none" id="sidebarClose">
+            <i class="fas fa-times"></i>
+          </button>
+
+          <!-- MENU -->
+          <ul class="nav-links">
+            <div class="search-bar d-lg-none mb-2">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Buscar..." />
+            </div>
+            <li>
+              <a href="../index.html"> <i class="fas fa-home"></i> Home </a>
+            </li>
+            <li>
+              <a href="agentes.html">
+                <i class="fas fa-user-secret"></i> Agentes
+              </a>
+            </li>
+            <li>
+              <a href="funcoes.html">
+                <i class="fas fa-shield-alt"></i> Funções
+              </a>
+            </li>
+            <li>
+              <a href="mapas.html"> <i class="fas fa-map"></i> Mapas </a>
+            </li>
+            <li>
+              <a href="configuracoes.html">
+                <i class="fas fa-cog"></i> Configurações
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content col-12 col-lg-9 col-xl-9 col-xxl-10">
+          <!-- Hero Section -->
+          <section
+            class="hero"
+            style="background-image: url('../assets/hero/valorant-banner.avif')"
+          >
+            <div class="hero-content">
+              <h1>Meu Progresso</h1>
+              <p>
+                Acompanhe seu desenvolvimento e conquistas na jornada do
+                Valorant
+              </p>
+              <button class="btn-play">
+                Ver Detalhes <i class="fas fa-chart-line"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- Dashboard de Progresso -->
+          <section class="progress-dashboard">
+            <h2>Visão Geral do Progresso</h2>
+            <div class="dashboard-grid">
+              <div class="dashboard-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                  </div>
+                  <h3>Aulas Concluídas</h3>
+                </div>
+                <div class="card-content">
+                  <div class="progress-circle">
+                    <div class="circle-progress" data-progress="75">
+                      <span class="progress-number">75%</span>
+                    </div>
+                  </div>
+                  <p>87 de 116 aulas</p>
+                </div>
+              </div>
+
+              <div class="dashboard-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <h3>Tempo de Estudo</h3>
+                </div>
+                <div class="card-content">
+                  <div class="progress-circle">
+                    <div class="circle-progress" data-progress="60">
+                      <span class="progress-number">156h</span>
+                    </div>
+                  </div>
+                  <p>Meta: 260h</p>
+                </div>
+              </div>
+
+              <div class="dashboard-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <i class="fas fa-certificate"></i>
+                  </div>
+                  <h3>Certificados</h3>
+                </div>
+                <div class="card-content">
+                  <div class="progress-circle">
+                    <div class="circle-progress" data-progress="80">
+                      <span class="progress-number">24</span>
+                    </div>
+                  </div>
+                  <p>Meta: 30 certificados</p>
+                </div>
+              </div>
+
+              <div class="dashboard-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <i class="fas fa-fire"></i>
+                  </div>
+                  <h3>Sequência Atual</h3>
+                </div>
+                <div class="card-content">
+                  <div class="progress-circle">
+                    <div class="circle-progress" data-progress="90">
+                      <span class="progress-number">12</span>
+                    </div>
+                  </div>
+                  <p>dias consecutivos</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Trilha de Aprendizado -->
+          <section class="learning-path">
+            <h2>Trilha de Aprendizado</h2>
+            <div class="path-container">
+              <div class="path-item completed">
+                <div class="path-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="path-content">
+                  <h3>Fundamentos do Valorant</h3>
+                  <p>Aprenda os conceitos básicos do jogo</p>
+                  <div class="path-progress">
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <span class="progress-text">100% Completo</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="path-item completed">
+                <div class="path-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="path-content">
+                  <h3>Agentes Duelistas</h3>
+                  <p>Domine os agentes de entrada</p>
+                  <div class="path-progress">
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <span class="progress-text">100% Completo</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="path-item in-progress">
+                <div class="path-icon">
+                  <i class="fas fa-play"></i>
+                </div>
+                <div class="path-content">
+                  <h3>Estratégias de Mapas</h3>
+                  <p>Aprenda as estratégias para cada mapa</p>
+                  <div class="path-progress">
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 65%"></div>
+                    </div>
+                    <span class="progress-text">65% Completo</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="path-item locked">
+                <div class="path-icon">
+                  <i class="fas fa-lock"></i>
+                </div>
+                <div class="path-content">
+                  <h3>Táticas Avançadas</h3>
+                  <p>Estratégias para jogadores experientes</p>
+                  <div class="path-progress">
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text">Bloqueado</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="path-item locked">
+                <div class="path-icon">
+                  <i class="fas fa-lock"></i>
+                </div>
+                <div class="path-content">
+                  <h3>Coaching Individual</h3>
+                  <p>Sessões personalizadas de treinamento</p>
+                  <div class="path-progress">
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text">Bloqueado</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Estatísticas de Progresso -->
+          <section class="progress-stats">
+            <h2>Estatísticas de Progresso</h2>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <h3>Progresso por Categoria</h3>
+                <div class="category-progress">
+                  <div class="category-item">
+                    <span class="category-name">Agentes</span>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 85%"></div>
+                    </div>
+                    <span class="progress-percentage">85%</span>
+                  </div>
+                  <div class="category-item">
+                    <span class="category-name">Mapas</span>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 70%"></div>
+                    </div>
+                    <span class="progress-percentage">70%</span>
+                  </div>
+                  <div class="category-item">
+                    <span class="category-name">Estratégias</span>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 60%"></div>
+                    </div>
+                    <span class="progress-percentage">60%</span>
+                  </div>
+                  <div class="category-item">
+                    <span class="category-name">Táticas</span>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 45%"></div>
+                    </div>
+                    <span class="progress-percentage">45%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <h3>Atividade Semanal</h3>
+                <div class="weekly-activity">
+                  <div class="activity-chart">
+                    <div class="chart-bar" style="height: 80%">
+                      <span class="day">Dom</span>
+                      <span class="hours">4h</span>
+                    </div>
+                    <div class="chart-bar" style="height: 60%">
+                      <span class="day">Seg</span>
+                      <span class="hours">3h</span>
+                    </div>
+                    <div class="chart-bar" style="height: 90%">
+                      <span class="day">Ter</span>
+                      <span class="hours">4.5h</span>
+                    </div>
+                    <div class="chart-bar" style="height: 40%">
+                      <span class="day">Qua</span>
+                      <span class="hours">2h</span>
+                    </div>
+                    <div class="chart-bar" style="height: 70%">
+                      <span class="day">Qui</span>
+                      <span class="hours">3.5h</span>
+                    </div>
+                    <div class="chart-bar" style="height: 100%">
+                      <span class="day">Sex</span>
+                      <span class="hours">5h</span>
+                    </div>
+                    <div class="chart-bar" style="height: 50%">
+                      <span class="day">Sáb</span>
+                      <span class="hours">2.5h</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Conquistas -->
+          <section class="achievements">
+            <h2>Conquistas Recentes</h2>
+            <div class="achievements-grid">
+              <div class="achievement-card earned">
+                <div class="achievement-content">
+                  <div class="achievement-icon">
+                    <i class="fas fa-trophy"></i>
+                  </div>
+                  <h3>Primeira Vitória</h3>
+                  <p>Completou sua primeira aula</p>
+                </div>
+                <div class="achievement-status">
+                  <span class="achievement-date">Conquistado</span>
+                </div>
+              </div>
+
+              <div class="achievement-card earned">
+                <div class="achievement-content">
+                  <div class="achievement-icon">
+                    <i class="fas fa-fire"></i>
+                  </div>
+                  <h3>Sequência de Ferro</h3>
+                  <p>Estudou por 7 dias seguidos</p>
+                </div>
+                <div class="achievement-status">
+                  <span class="achievement-date">Conquistado</span>
+                </div>
+              </div>
+
+              <div class="achievement-card earned">
+                <div class="achievement-content">
+                  <div class="achievement-icon">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h3>Especialista em Jett</h3>
+                  <p>Dominou todas as técnicas da Jett</p>
+                </div>
+                <div class="achievement-status">
+                  <span class="achievement-date">Conquistado</span>
+                </div>
+              </div>
+
+              <div class="achievement-card progress">
+                <div class="achievement-content">
+                  <div class="achievement-icon">
+                    <i class="fas fa-crown"></i>
+                  </div>
+                  <h3>Mestre dos Mapas</h3>
+                  <p>Estude todos os mapas competitivos</p>
+                </div>
+                <div class="achievement-status">
+                  <span class="achievement-date">70% Completo</span>
+                </div>
+              </div>
+
+              <div class="achievement-card locked">
+                <div class="achievement-content">
+                  <div class="achievement-icon">
+                    <i class="fas fa-gem"></i>
+                  </div>
+                  <h3>Lenda Radiante</h3>
+                  <p>Complete todas as trilhas de aprendizado</p>
+                </div>
+                <div class="achievement-status">
+                  <span class="achievement-date">Bloqueado</span>
+                </div>
+              </div>
+
+              <div class="achievement-card locked">
+                <div class="achievement-content">
+                  <div class="achievement-icon">
+                    <i class="fas fa-medal"></i>
+                  </div>
+                  <h3>Mentor da Academia</h3>
+                  <p>Ajude outros 50 estudantes</p>
+                </div>
+                <div class="achievement-status">
+                  <span class="achievement-date">Bloqueado</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="../js/main.js" type="module"></script>
+  </body>
+</html>

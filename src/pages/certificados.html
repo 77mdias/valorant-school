@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificados - Valorant Ace School</title>
+    <link
+      rel="icon"
+      href="../assets/logoPage/Valorant-Academy.png"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="vw-100 vh-100">
+    <div id="" class="">
+      <div class="row">
+        <!-- Topbar estilo Twitch -->
+        <nav class="navbar col-12 col-lg-12 p-0 navbar-expand-lg">
+          <div class="container-fluid" id="topBar">
+            <div class="topbar justify-content-between gap-2" id="navbarNav">
+              <!-- BOTÃO HAMBURGER (só aparece em mobile) -->
+              <button class="hamburger-btn d-lg-none" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+              </button>
+
+              <!-- LOGO -->
+              <div class="logo">
+                <img
+                  src="../assets/logoPage/Valorant-Academy.png"
+                  alt="Valorant Academy"
+                />
+                <img src="../assets/logoPage/ACE.png" alt="ACE" />
+              </div>
+
+              <!-- BARRA DE PESQUISA -->
+              <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar certificados..." />
+              </div>
+
+              <!-- BOTÕES -->
+              <div class="user-actions">
+                <!-- BOTÃO NOTIFICAÇÕES -->
+                <i class="fas fa-bell"></i>
+
+                <!-- DROPDOWN -->
+                <div class="dropdown">
+                  <button
+                    class="btn dropdownProfile dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-circle-user"></i>
+                  </button>
+                  <!-- DROPDOWN MENU -->
+                  <ul
+                    class="dropdown-menu dropdown-menu-dark dropdown-menu-end mt-3"
+                  >
+                    <!-- BOTÃO PERFIL -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="perfil.html"
+                      >
+                        <i class="fas fa-user-circle"></i>
+                        Meu Perfil
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO PROGRESSO -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="progresso.html"
+                      >
+                        <i class="fas fa-chart-line text-success"></i>
+                        Meu Progresso
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO FAVORITOS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="favoritas.html"
+                      >
+                        <i class="fas fa-heart text-danger"></i>
+                        Aulas Favoritas
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO CERTIFICADOS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="certificados.html"
+                      >
+                        <i class="fas fa-certificate text-warning"></i>
+                        Certificados
+                      </a>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO RANK/ELO -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="rank.html"
+                      >
+                        <i class="fas fa-trophy text-warning"></i>
+                        Meu Rank:
+                        <span class="badge bg-purple ms-1">Diamante</span>
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO ESTATÍSTICAS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="estatisticas.html"
+                      >
+                        <i class="fas fa-chart-bar text-info"></i>
+                        Estatísticas
+                      </a>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO CONFIGURAÇÕES -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="configuracoes.html"
+                      >
+                        <i class="fas fa-cog text-secondary"></i>
+                        Configurações
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO TEMA -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        type="button"
+                        data-theme-toggle
+                      >
+                        <i class="fas fa-moon text-warning"></i>
+                        <span class="theme-text">Tema Escuro</span>
+                      </button>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO SAIR -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5 text-danger"
+                        type="button"
+                      >
+                        <i class="fas fa-sign-out-alt"></i>
+                        Sair
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Overlay para mobile -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Sidebar com botão de fechar -->
+        <aside class="sidebar col-12 col-lg-3 col-xl-3 col-xxl-2" id="sidebar">
+          <!-- Botão fechar só aparece em mobile -->
+          <button class="close-btn d-lg-none" id="sidebarClose">
+            <i class="fas fa-times"></i>
+          </button>
+
+          <!-- MENU -->
+          <ul class="nav-links">
+            <div class="search-bar d-lg-none mb-2">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Buscar certificados..." />
+            </div>
+            <li>
+              <a href="../index.html"> <i class="fas fa-home"></i> Home </a>
+            </li>
+            <li>
+              <a href="agentes.html">
+                <i class="fas fa-user-secret"></i> Agentes
+              </a>
+            </li>
+            <li>
+              <a href="funcoes.html">
+                <i class="fas fa-shield-alt"></i> Funções
+              </a>
+            </li>
+            <li>
+              <a href="mapas.html"> <i class="fas fa-map"></i> Mapas </a>
+            </li>
+            <li>
+              <a href="configuracoes.html">
+                <i class="fas fa-cog"></i> Configurações
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content col-12 col-lg-9 col-xl-9 col-xxl-10">
+          <!-- Hero Section -->
+          <section
+            class="hero"
+            style="background-image: url('../assets/hero/valorant-banner.avif')"
+          >
+            <div class="hero-content">
+              <h1>Certificados</h1>
+              <p>Suas conquistas e certificados de conclusão de cursos</p>
+              <button class="btn-play">
+                Ver Conquistas <i class="fas fa-certificate"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- Resumo de Certificados -->
+          <section class="certificates-summary">
+            <h2>Resumo das Conquistas</h2>
+            <div class="summary-grid">
+              <div class="summary-card">
+                <div class="summary-icon">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <div class="summary-content">
+                  <h3>24</h3>
+                  <p>Certificados Conquistados</p>
+                </div>
+              </div>
+              <div class="summary-card">
+                <div class="summary-icon">
+                  <i class="fas fa-trophy"></i>
+                </div>
+                <div class="summary-content">
+                  <h3>8</h3>
+                  <p>Conquistas Especiais</p>
+                </div>
+              </div>
+              <div class="summary-card">
+                <div class="summary-icon">
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="summary-content">
+                  <h3>156</h3>
+                  <p>Pontos de Experiência</p>
+                </div>
+              </div>
+              <div class="summary-card">
+                <div class="summary-icon">
+                  <i class="fas fa-medal"></i>
+                </div>
+                <div class="summary-content">
+                  <h3>95%</h3>
+                  <p>Taxa de Conclusão</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Certificados Recentes -->
+          <section class="recent-certificates">
+            <h2>Certificados Recentes</h2>
+            <div class="certificates-grid">
+              <div class="certificate-card earned">
+                <div class="certificate-ribbon">
+                  <i class="fas fa-award"></i>
+                </div>
+                <div class="certificate-content">
+                  <div class="certificate-icon">
+                    <i class="fas fa-user-secret"></i>
+                  </div>
+                  <h3>Especialista em Jett</h3>
+                  <p>Completou com sucesso o curso avançado sobre Jett</p>
+                  <div class="certificate-meta">
+                    <span class="completion-date">Concluído em 15/12/2024</span>
+                    <span class="certificate-level">Nível Avançado</span>
+                  </div>
+                </div>
+                <div class="certificate-actions">
+                  <button class="btn-primary">
+                    <i class="fas fa-download"></i> Baixar
+                  </button>
+                  <button class="btn-secondary">
+                    <i class="fas fa-share"></i> Compartilhar
+                  </button>
+                </div>
+              </div>
+
+              <div class="certificate-card earned">
+                <div class="certificate-ribbon">
+                  <i class="fas fa-award"></i>
+                </div>
+                <div class="certificate-content">
+                  <div class="certificate-icon">
+                    <i class="fas fa-map"></i>
+                  </div>
+                  <h3>Mestre do Bind</h3>
+                  <p>Dominou todas as estratégias do mapa Bind</p>
+                  <div class="certificate-meta">
+                    <span class="completion-date">Concluído em 12/12/2024</span>
+                    <span class="certificate-level">Nível Intermediário</span>
+                  </div>
+                </div>
+                <div class="certificate-actions">
+                  <button class="btn-primary">
+                    <i class="fas fa-download"></i> Baixar
+                  </button>
+                  <button class="btn-secondary">
+                    <i class="fas fa-share"></i> Compartilhar
+                  </button>
+                </div>
+              </div>
+
+              <div class="certificate-card earned">
+                <div class="certificate-ribbon">
+                  <i class="fas fa-award"></i>
+                </div>
+                <div class="certificate-content">
+                  <div class="certificate-icon">
+                    <i class="fas fa-chess"></i>
+                  </div>
+                  <h3>Estrategista Duelista</h3>
+                  <p>Completou o curso de estratégias para duelistas</p>
+                  <div class="certificate-meta">
+                    <span class="completion-date">Concluído em 10/12/2024</span>
+                    <span class="certificate-level">Nível Avançado</span>
+                  </div>
+                </div>
+                <div class="certificate-actions">
+                  <button class="btn-primary">
+                    <i class="fas fa-download"></i> Baixar
+                  </button>
+                  <button class="btn-secondary">
+                    <i class="fas fa-share"></i> Compartilhar
+                  </button>
+                </div>
+              </div>
+
+              <div class="certificate-card in-progress">
+                <div class="certificate-ribbon">
+                  <i class="fas fa-spinner"></i>
+                </div>
+                <div class="certificate-content">
+                  <div class="certificate-icon">
+                    <i class="fas fa-shield-alt"></i>
+                  </div>
+                  <h3>Controlador Expert</h3>
+                  <p>Curso avançado sobre agentes controladores</p>
+                  <div class="certificate-meta">
+                    <span class="completion-date">Em andamento</span>
+                    <span class="certificate-level">Nível Expert</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 65%"></div>
+                  </div>
+                  <span class="progress-text">65% Completo</span>
+                </div>
+                <div class="certificate-actions">
+                  <button class="btn-primary">
+                    <i class="fas fa-play"></i> Continuar
+                  </button>
+                  <button class="btn-secondary disabled">
+                    <i class="fas fa-lock"></i> Bloqueado
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Todos os Certificados -->
+          <section class="all-certificates">
+            <h2>Todos os Certificados</h2>
+            <div class="certificates-list">
+              <div class="list-header">
+                <div class="list-filters">
+                  <button class="filter-btn active" data-filter="all">
+                    Todos
+                  </button>
+                  <button class="filter-btn" data-filter="earned">
+                    Conquistados
+                  </button>
+                  <button class="filter-btn" data-filter="in-progress">
+                    Em Andamento
+                  </button>
+                  <button class="filter-btn" data-filter="locked">
+                    Bloqueados
+                  </button>
+                </div>
+                <div class="list-sort">
+                  <select class="sort-select">
+                    <option value="recent">Mais Recentes</option>
+                    <option value="alphabetical">Alfabética</option>
+                    <option value="level">Nível</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="certificates-table">
+                <div class="table-row earned">
+                  <div class="certificate-info">
+                    <div class="certificate-icon">
+                      <i class="fas fa-user-secret"></i>
+                    </div>
+                    <div class="certificate-details">
+                      <h4>Especialista em Jett</h4>
+                      <p>Curso avançado sobre Jett</p>
+                    </div>
+                  </div>
+                  <div class="certificate-level">
+                    <span class="level-badge advanced">Avançado</span>
+                  </div>
+                  <div class="certificate-date">
+                    <span>15/12/2024</span>
+                  </div>
+                  <div class="certificate-status">
+                    <span class="status-badge earned">Conquistado</span>
+                  </div>
+                  <div class="certificate-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-download"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-share"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="table-row earned">
+                  <div class="certificate-info">
+                    <div class="certificate-icon">
+                      <i class="fas fa-map"></i>
+                    </div>
+                    <div class="certificate-details">
+                      <h4>Mestre do Bind</h4>
+                      <p>Estratégias do mapa Bind</p>
+                    </div>
+                  </div>
+                  <div class="certificate-level">
+                    <span class="level-badge intermediate">Intermediário</span>
+                  </div>
+                  <div class="certificate-date">
+                    <span>12/12/2024</span>
+                  </div>
+                  <div class="certificate-status">
+                    <span class="status-badge earned">Conquistado</span>
+                  </div>
+                  <div class="certificate-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-download"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-share"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="table-row in-progress">
+                  <div class="certificate-info">
+                    <div class="certificate-icon">
+                      <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="certificate-details">
+                      <h4>Controlador Expert</h4>
+                      <p>Curso avançado sobre controladores</p>
+                    </div>
+                  </div>
+                  <div class="certificate-level">
+                    <span class="level-badge expert">Expert</span>
+                  </div>
+                  <div class="certificate-date">
+                    <span>Em andamento</span>
+                  </div>
+                  <div class="certificate-status">
+                    <span class="status-badge in-progress">65%</span>
+                  </div>
+                  <div class="certificate-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-play"></i>
+                    </button>
+                    <button class="action-btn disabled">
+                      <i class="fas fa-lock"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="table-row locked">
+                  <div class="certificate-info">
+                    <div class="certificate-icon">
+                      <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="certificate-details">
+                      <h4>Lenda Radiante</h4>
+                      <p>Certificado máximo da academia</p>
+                    </div>
+                  </div>
+                  <div class="certificate-level">
+                    <span class="level-badge legendary">Lendário</span>
+                  </div>
+                  <div class="certificate-date">
+                    <span>Bloqueado</span>
+                  </div>
+                  <div class="certificate-status">
+                    <span class="status-badge locked">Bloqueado</span>
+                  </div>
+                  <div class="certificate-actions">
+                    <button class="action-btn disabled">
+                      <i class="fas fa-lock"></i>
+                    </button>
+                    <button class="action-btn disabled">
+                      <i class="fas fa-info"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>

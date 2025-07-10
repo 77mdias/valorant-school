@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapas - Valorant Ace School</title>
+    <link
+      rel="icon"
+      href="../assets/logoPage/Valorant-Academy.png"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="vw-100 vh-100">
+    <div id="" class="">
+      <div class="row">
+        <!-- Topbar estilo Twitch -->
+        <nav class="navbar col-12 col-lg-12 p-0 navbar-expand-lg">
+          <div class="container-fluid" id="topBar">
+            <div class="topbar justify-content-between gap-2" id="navbarNav">
+              <!-- BOTÃO HAMBURGER (só aparece em mobile) -->
+              <button class="hamburger-btn d-lg-none" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+              </button>
+
+              <!-- LOGO -->
+              <div class="logo">
+                <img
+                  src="../assets/logoPage/Valorant-Academy.png"
+                  alt="Valorant Academy"
+                />
+                <img src="../assets/logoPage/ACE.png" alt="ACE" />
+              </div>
+
+              <!-- BARRA DE PESQUISA -->
+              <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar mapas..." />
+              </div>
+
+              <!-- BOTÕES -->
+              <div class="user-actions">
+                <!-- BOTÃO NOTIFICAÇÕES -->
+                <i class="fas fa-bell"></i>
+
+                <!-- DROPDOWN -->
+                <div class="dropdown">
+                  <button
+                    class="btn dropdownProfile dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-circle-user"></i>
+                  </button>
+                  <!-- DROPDOWN MENU -->
+                  <ul
+                    class="dropdown-menu dropdown-menu-dark dropdown-menu-end mt-3"
+                  >
+                    <!-- BOTÃO PERFIL -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="perfil.html"
+                      >
+                        <i class="fas fa-user-circle"></i>
+                        Meu Perfil
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO PROGRESSO -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="progresso.html"
+                      >
+                        <i class="fas fa-chart-line text-success"></i>
+                        Meu Progresso
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO FAVORITOS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="favoritas.html"
+                      >
+                        <i class="fas fa-heart text-danger"></i>
+                        Aulas Favoritas
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO CERTIFICADOS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="certificados.html"
+                      >
+                        <i class="fas fa-certificate text-warning"></i>
+                        Certificados
+                      </a>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO RANK/ELO -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="rank.html"
+                      >
+                        <i class="fas fa-trophy text-warning"></i>
+                        Meu Rank:
+                        <span class="badge bg-purple ms-1">Diamante</span>
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO ESTATÍSTICAS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="estatisticas.html"
+                      >
+                        <i class="fas fa-chart-bar text-info"></i>
+                        Estatísticas
+                      </a>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO CONFIGURAÇÕES -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="configuracoes.html"
+                      >
+                        <i class="fas fa-cog text-secondary"></i>
+                        Configurações
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO TEMA -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        type="button"
+                        data-theme-toggle
+                      >
+                        <i class="fas fa-moon text-warning"></i>
+                        <span class="theme-text">Tema Escuro</span>
+                      </button>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO SAIR -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5 text-danger"
+                        type="button"
+                      >
+                        <i class="fas fa-sign-out-alt"></i>
+                        Sair
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Overlay para mobile -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Sidebar com botão de fechar -->
+        <aside class="sidebar col-12 col-lg-3 col-xl-3 col-xxl-2" id="sidebar">
+          <!-- Botão fechar só aparece em mobile -->
+          <button class="close-btn d-lg-none" id="sidebarClose">
+            <i class="fas fa-times"></i>
+          </button>
+
+          <!-- MENU -->
+          <ul class="nav-links">
+            <div class="search-bar d-lg-none mb-2">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Buscar mapas..." />
+            </div>
+            <li>
+              <a href="../index.html"> <i class="fas fa-home"></i> Home </a>
+            </li>
+            <li>
+              <a href="agentes.html">
+                <i class="fas fa-user-secret"></i> Agentes
+              </a>
+            </li>
+            <li>
+              <a href="funcoes.html">
+                <i class="fas fa-shield-alt"></i> Funções
+              </a>
+            </li>
+            <li>
+              <a href="mapas.html" class="active">
+                <i class="fas fa-map"></i> Mapas
+              </a>
+            </li>
+            <li>
+              <a href="configuracoes.html">
+                <i class="fas fa-cog"></i> Configurações
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content col-12 col-lg-9 col-xl-9 col-xxl-10">
+          <!-- Hero Section -->
+          <section
+            class="hero"
+            style="background-image: url('../assets/hero/valorant-banner.avif')"
+          >
+            <div class="hero-content">
+              <h1>Dominate os Mapas</h1>
+              <p>
+                Aprenda as estratégias, callouts e posicionamentos de cada mapa
+              </p>
+              <button class="btn-play">
+                Explorar Mapas <i class="fas fa-map"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- Filtros de Mapas -->
+          <section class="filters-section">
+            <h2>Filtrar Mapas</h2>
+            <div class="filter-buttons">
+              <button class="filter-btn active" data-filter="all">
+                <i class="fas fa-globe"></i> Todos
+              </button>
+              <button class="filter-btn" data-filter="competitive">
+                <i class="fas fa-trophy"></i> Competitivos
+              </button>
+              <button class="filter-btn" data-filter="popular">
+                <i class="fas fa-star"></i> Populares
+              </button>
+              <button class="filter-btn" data-filter="recent">
+                <i class="fas fa-clock"></i> Recentes
+              </button>
+            </div>
+          </section>
+
+          <!-- Grid de Mapas -->
+          <section class="maps-grid">
+            <div class="maps-container">
+              <!-- Mapa Bind -->
+              <div class="map-card" data-category="competitive popular">
+                <div
+                  class="map-image"
+                  style="background: linear-gradient(135deg, #ff6b6b, #4ecdc4)"
+                >
+                  <div class="map-overlay">
+                    <h3>Bind</h3>
+                    <p>Mapa com duas bombsites conectadas por teleports</p>
+                    <div class="map-stats">
+                      <span class="stat">
+                        <i class="fas fa-users"></i>
+                        Popular
+                      </span>
+                      <span class="stat">
+                        <i class="fas fa-trophy"></i>
+                        Competitivo
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-info">
+                  <div class="map-details">
+                    <h4>Características:</h4>
+                    <ul>
+                      <li>Teleports únicos</li>
+                      <li>Controle de meio limitado</li>
+                      <li>Rotações rápidas</li>
+                    </ul>
+                  </div>
+                  <div class="map-actions">
+                    <button class="map-btn primary">
+                      <i class="fas fa-play"></i> Estudar
+                    </button>
+                    <button class="map-btn secondary">
+                      <i class="fas fa-map-marked-alt"></i> Callouts
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mapa Ascent -->
+              <div class="map-card" data-category="competitive popular">
+                <div
+                  class="map-image"
+                  style="background: linear-gradient(135deg, #a8e6cf, #88d8a3)"
+                >
+                  <div class="map-overlay">
+                    <h3>Ascent</h3>
+                    <p>Mapa clássico com meio aberto e muitos ângulos</p>
+                    <div class="map-stats">
+                      <span class="stat">
+                        <i class="fas fa-users"></i>
+                        Popular
+                      </span>
+                      <span class="stat">
+                        <i class="fas fa-trophy"></i>
+                        Competitivo
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-info">
+                  <div class="map-details">
+                    <h4>Características:</h4>
+                    <ul>
+                      <li>Meio aberto</li>
+                      <li>Muitos ângulos</li>
+                      <li>Controle de mapa importante</li>
+                    </ul>
+                  </div>
+                  <div class="map-actions">
+                    <button class="map-btn primary">
+                      <i class="fas fa-play"></i> Estudar
+                    </button>
+                    <button class="map-btn secondary">
+                      <i class="fas fa-map-marked-alt"></i> Callouts
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mapa Haven -->
+              <div class="map-card" data-category="competitive">
+                <div
+                  class="map-image"
+                  style="background: linear-gradient(135deg, #ffb6c1, #ffd1dc)"
+                >
+                  <div class="map-overlay">
+                    <h3>Haven</h3>
+                    <p>Único mapa com três bombsites (A, B, C)</p>
+                    <div class="map-stats">
+                      <span class="stat">
+                        <i class="fas fa-trophy"></i>
+                        Competitivo
+                      </span>
+                      <span class="stat">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Complexo
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-info">
+                  <div class="map-details">
+                    <h4>Características:</h4>
+                    <ul>
+                      <li>Três bombsites</li>
+                      <li>Múltiplas rotações</li>
+                      <li>Estratégias complexas</li>
+                    </ul>
+                  </div>
+                  <div class="map-actions">
+                    <button class="map-btn primary">
+                      <i class="fas fa-play"></i> Estudar
+                    </button>
+                    <button class="map-btn secondary">
+                      <i class="fas fa-map-marked-alt"></i> Callouts
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mapa Split -->
+              <div class="map-card" data-category="competitive">
+                <div
+                  class="map-image"
+                  style="background: linear-gradient(135deg, #dda0dd, #d8bfd8)"
+                >
+                  <div class="map-overlay">
+                    <h3>Split</h3>
+                    <p>Mapa vertical com elevações e ramps</p>
+                    <div class="map-stats">
+                      <span class="stat">
+                        <i class="fas fa-trophy"></i>
+                        Competitivo
+                      </span>
+                      <span class="stat">
+                        <i class="fas fa-mountain"></i>
+                        Vertical
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-info">
+                  <div class="map-details">
+                    <h4>Características:</h4>
+                    <ul>
+                      <li>Jogo vertical</li>
+                      <li>Ramps e elevações</li>
+                      <li>Controle de heights</li>
+                    </ul>
+                  </div>
+                  <div class="map-actions">
+                    <button class="map-btn primary">
+                      <i class="fas fa-play"></i> Estudar
+                    </button>
+                    <button class="map-btn secondary">
+                      <i class="fas fa-map-marked-alt"></i> Callouts
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mapa Icebox -->
+              <div class="map-card" data-category="competitive recent">
+                <div
+                  class="map-image"
+                  style="background: linear-gradient(135deg, #87ceeb, #b0e0e6)"
+                >
+                  <div class="map-overlay">
+                    <h3>Icebox</h3>
+                    <p>Mapa gelado com containers e elevações</p>
+                    <div class="map-stats">
+                      <span class="stat">
+                        <i class="fas fa-trophy"></i>
+                        Competitivo
+                      </span>
+                      <span class="stat">
+                        <i class="fas fa-snowflake"></i>
+                        Gelado
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-info">
+                  <div class="map-details">
+                    <h4>Características:</h4>
+                    <ul>
+                      <li>Terreno gelado</li>
+                      <li>Containers como cover</li>
+                      <li>Múltiplas elevações</li>
+                    </ul>
+                  </div>
+                  <div class="map-actions">
+                    <button class="map-btn primary">
+                      <i class="fas fa-play"></i> Estudar
+                    </button>
+                    <button class="map-btn secondary">
+                      <i class="fas fa-map-marked-alt"></i> Callouts
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mapa Breeze -->
+              <div class="map-card" data-category="competitive recent">
+                <div
+                  class="map-image"
+                  style="background: linear-gradient(135deg, #98fb98, #90ee90)"
+                >
+                  <div class="map-overlay">
+                    <h3>Breeze</h3>
+                    <p>Mapa tropical com longas distâncias</p>
+                    <div class="map-stats">
+                      <span class="stat">
+                        <i class="fas fa-trophy"></i>
+                        Competitivo
+                      </span>
+                      <span class="stat">
+                        <i class="fas fa-sun"></i>
+                        Tropical
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-info">
+                  <div class="map-details">
+                    <h4>Características:</h4>
+                    <ul>
+                      <li>Longas distâncias</li>
+                      <li>Ambiente tropical</li>
+                      <li>Duelos de longa distância</li>
+                    </ul>
+                  </div>
+                  <div class="map-actions">
+                    <button class="map-btn primary">
+                      <i class="fas fa-play"></i> Estudar
+                    </button>
+                    <button class="map-btn secondary">
+                      <i class="fas fa-map-marked-alt"></i> Callouts
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Seção de Estratégias Gerais -->
+          <section class="map-strategies">
+            <h2>Estratégias Gerais</h2>
+            <div class="strategies-grid">
+              <div class="strategy-card">
+                <div class="strategy-icon">
+                  <i class="fas fa-crosshairs"></i>
+                </div>
+                <h3>Controle de Mapa</h3>
+                <p>
+                  Aprenda a controlar áreas chave e estabelecer presença no mapa
+                </p>
+                <ul>
+                  <li>Controle de meio</li>
+                  <li>Informação territorial</li>
+                  <li>Rotações eficientes</li>
+                </ul>
+              </div>
+
+              <div class="strategy-card">
+                <div class="strategy-icon">
+                  <i class="fas fa-comments"></i>
+                </div>
+                <h3>Callouts</h3>
+                <p>Domine a comunicação com callouts precisos para cada mapa</p>
+                <ul>
+                  <li>Callouts padronizados</li>
+                  <li>Comunicação clara</li>
+                  <li>Informações rápidas</li>
+                </ul>
+              </div>
+
+              <div class="strategy-card">
+                <div class="strategy-icon">
+                  <i class="fas fa-route"></i>
+                </div>
+                <h3>Rotações</h3>
+                <p>Entenda os timings e rotas de rotação para cada situação</p>
+                <ul>
+                  <li>Timings de rotação</li>
+                  <li>Rotas alternativas</li>
+                  <li>Leitura de jogo</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aulas Favoritas - Valorant Ace School</title>
+    <link
+      rel="icon"
+      href="../assets/logoPage/Valorant-Academy.png"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="vw-100 vh-100">
+    <div id="" class="">
+      <div class="row">
+        <!-- Topbar estilo Twitch -->
+        <nav class="navbar col-12 col-lg-12 p-0 navbar-expand-lg">
+          <div class="container-fluid" id="topBar">
+            <div class="topbar justify-content-between gap-2" id="navbarNav">
+              <!-- BOTÃO HAMBURGER (só aparece em mobile) -->
+              <button class="hamburger-btn d-lg-none" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+              </button>
+
+              <!-- LOGO -->
+              <div class="logo">
+                <img
+                  src="../assets/logoPage/Valorant-Academy.png"
+                  alt="Valorant Academy"
+                />
+                <img src="../assets/logoPage/ACE.png" alt="ACE" />
+              </div>
+
+              <!-- BARRA DE PESQUISA -->
+              <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar favoritas..." />
+              </div>
+
+              <!-- BOTÕES -->
+              <div class="user-actions">
+                <!-- BOTÃO NOTIFICAÇÕES -->
+                <i class="fas fa-bell"></i>
+
+                <!-- DROPDOWN -->
+                <div class="dropdown">
+                  <button
+                    class="btn dropdownProfile dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-circle-user"></i>
+                  </button>
+                  <!-- DROPDOWN MENU -->
+                  <ul
+                    class="dropdown-menu dropdown-menu-dark dropdown-menu-end mt-3"
+                  >
+                    <!-- BOTÃO PERFIL -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="perfil.html"
+                      >
+                        <i class="fas fa-user-circle"></i>
+                        Meu Perfil
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO PROGRESSO -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="progresso.html"
+                      >
+                        <i class="fas fa-chart-line text-success"></i>
+                        Meu Progresso
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO FAVORITOS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="favoritas.html"
+                      >
+                        <i class="fas fa-heart text-danger"></i>
+                        Aulas Favoritas
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO CERTIFICADOS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="certificados.html"
+                      >
+                        <i class="fas fa-certificate text-warning"></i>
+                        Certificados
+                      </a>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO RANK/ELO -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="rank.html"
+                      >
+                        <i class="fas fa-trophy text-warning"></i>
+                        Meu Rank:
+                        <span class="badge bg-purple ms-1">Diamante</span>
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO ESTATÍSTICAS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="estatisticas.html"
+                      >
+                        <i class="fas fa-chart-bar text-info"></i>
+                        Estatísticas
+                      </a>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO CONFIGURAÇÕES -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="configuracoes.html"
+                      >
+                        <i class="fas fa-cog text-secondary"></i>
+                        Configurações
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO TEMA -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        type="button"
+                        data-theme-toggle
+                      >
+                        <i class="fas fa-moon text-warning"></i>
+                        <span class="theme-text">Tema Escuro</span>
+                      </button>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO SAIR -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5 text-danger"
+                        type="button"
+                      >
+                        <i class="fas fa-sign-out-alt"></i>
+                        Sair
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Overlay para mobile -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Sidebar com botão de fechar -->
+        <aside class="sidebar col-12 col-lg-3 col-xl-3 col-xxl-2" id="sidebar">
+          <!-- Botão fechar só aparece em mobile -->
+          <button class="close-btn d-lg-none" id="sidebarClose">
+            <i class="fas fa-times"></i>
+          </button>
+
+          <!-- MENU -->
+          <ul class="nav-links">
+            <div class="search-bar d-lg-none mb-2">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Buscar favoritas..." />
+            </div>
+            <li>
+              <a href="../index.html"> <i class="fas fa-home"></i> Home </a>
+            </li>
+            <li>
+              <a href="agentes.html">
+                <i class="fas fa-user-secret"></i> Agentes
+              </a>
+            </li>
+            <li>
+              <a href="funcoes.html">
+                <i class="fas fa-shield-alt"></i> Funções
+              </a>
+            </li>
+            <li>
+              <a href="mapas.html"> <i class="fas fa-map"></i> Mapas </a>
+            </li>
+            <li>
+              <a href="configuracoes.html">
+                <i class="fas fa-cog"></i> Configurações
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content col-12 col-lg-9 col-xl-9 col-xxl-10">
+          <!-- Hero Section -->
+          <section
+            class="hero"
+            style="background-image: url('../assets/hero/valorant-banner.avif')"
+          >
+            <div class="hero-content">
+              <h1>Aulas Favoritas</h1>
+              <p>Seus conteúdos salvos para estudar a qualquer momento</p>
+              <button class="btn-play">
+                Ver Todas <i class="fas fa-heart"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- Filtros e Organização -->
+          <section class="favorites-controls">
+            <div class="controls-header">
+              <h2>Suas Aulas Favoritas (24)</h2>
+              <div class="controls-actions">
+                <div class="sort-options">
+                  <select class="sort-select">
+                    <option value="recent">Mais Recentes</option>
+                    <option value="alphabetical">Alfabética</option>
+                    <option value="difficulty">Dificuldade</option>
+                    <option value="duration">Duração</option>
+                  </select>
+                </div>
+                <div class="view-options">
+                  <button class="view-btn active" data-view="grid">
+                    <i class="fas fa-th-large"></i>
+                  </button>
+                  <button class="view-btn" data-view="list">
+                    <i class="fas fa-list"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-tabs">
+              <button class="filter-tab active" data-filter="all">
+                <i class="fas fa-star"></i> Todas (24)
+              </button>
+              <button class="filter-tab" data-filter="agents">
+                <i class="fas fa-user-secret"></i> Agentes (8)
+              </button>
+              <button class="filter-tab" data-filter="maps">
+                <i class="fas fa-map"></i> Mapas (6)
+              </button>
+              <button class="filter-tab" data-filter="strategies">
+                <i class="fas fa-chess"></i> Estratégias (10)
+              </button>
+            </div>
+          </section>
+
+          <!-- Grid de Aulas Favoritas -->
+          <section class="favorites-grid">
+            <div class="favorites-container">
+              <!-- Aula Favorita 1 -->
+              <div class="favorite-card" data-category="agents">
+                <div class="card-header">
+                  <div
+                    class="card-image"
+                    style="
+                      background-image: url('../assets/cards/jett-card.jpg');
+                    "
+                  >
+                    <button class="favorite-btn favorited">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <div class="card-overlay">
+                      <button class="play-btn">
+                        <i class="fas fa-play"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div class="card-badges">
+                    <span class="difficulty-badge easy">Iniciante</span>
+                    <span class="category-badge">Agentes</span>
+                  </div>
+                  <h3>Jett - Movimentos Ágeis</h3>
+                  <p>Domine as habilidades de mobilidade da Jett</p>
+                  <div class="card-meta">
+                    <span class="duration">
+                      <i class="fas fa-clock"></i> 25 min
+                    </span>
+                    <span class="progress">
+                      <i class="fas fa-check-circle"></i> Completo
+                    </span>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-primary">
+                      <i class="fas fa-play"></i> Assistir
+                    </button>
+                    <button class="btn-secondary">
+                      <i class="fas fa-download"></i> Baixar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Aula Favorita 2 -->
+              <div class="favorite-card" data-category="strategies">
+                <div class="card-header">
+                  <div
+                    class="card-image"
+                    style="
+                      background-image: url('../assets/cards/sova-card.webp');
+                    "
+                  >
+                    <button class="favorite-btn favorited">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <div class="card-overlay">
+                      <button class="play-btn">
+                        <i class="fas fa-play"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div class="card-badges">
+                    <span class="difficulty-badge medium">Intermediário</span>
+                    <span class="category-badge">Estratégias</span>
+                  </div>
+                  <h3>Sova - Reconhecimento</h3>
+                  <p>Use flechas de reconhecimento eficientemente</p>
+                  <div class="card-meta">
+                    <span class="duration">
+                      <i class="fas fa-clock"></i> 18 min
+                    </span>
+                    <span class="progress">
+                      <i class="fas fa-spinner"></i> 75%
+                    </span>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-primary">
+                      <i class="fas fa-play"></i> Continuar
+                    </button>
+                    <button class="btn-secondary">
+                      <i class="fas fa-download"></i> Baixar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Aula Favorita 3 -->
+              <div class="favorite-card" data-category="maps">
+                <div class="card-header">
+                  <div
+                    class="card-image"
+                    style="
+                      background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+                    "
+                  >
+                    <button class="favorite-btn favorited">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <div class="card-overlay">
+                      <button class="play-btn">
+                        <i class="fas fa-play"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div class="card-badges">
+                    <span class="difficulty-badge hard">Avançado</span>
+                    <span class="category-badge">Mapas</span>
+                  </div>
+                  <h3>Bind - Estratégias Avançadas</h3>
+                  <p>Domine as rotações e posicionamentos no Bind</p>
+                  <div class="card-meta">
+                    <span class="duration">
+                      <i class="fas fa-clock"></i> 32 min
+                    </span>
+                    <span class="progress">
+                      <i class="fas fa-play-circle"></i> Não iniciado
+                    </span>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-primary">
+                      <i class="fas fa-play"></i> Iniciar
+                    </button>
+                    <button class="btn-secondary">
+                      <i class="fas fa-download"></i> Baixar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Aula Favorita 4 -->
+              <div class="favorite-card" data-category="agents">
+                <div class="card-header">
+                  <div
+                    class="card-image"
+                    style="
+                      background-image: url('../assets/cards/reyna-card1.webp');
+                    "
+                  >
+                    <button class="favorite-btn favorited">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <div class="card-overlay">
+                      <button class="play-btn">
+                        <i class="fas fa-play"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div class="card-badges">
+                    <span class="difficulty-badge hard">Avançado</span>
+                    <span class="category-badge">Agentes</span>
+                  </div>
+                  <h3>Reyna - Maximizar Frags</h3>
+                  <p>Técnicas avançadas para maximizar eliminações</p>
+                  <div class="card-meta">
+                    <span class="duration">
+                      <i class="fas fa-clock"></i> 28 min
+                    </span>
+                    <span class="progress">
+                      <i class="fas fa-check-circle"></i> Completo
+                    </span>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-primary">
+                      <i class="fas fa-play"></i> Revisar
+                    </button>
+                    <button class="btn-secondary">
+                      <i class="fas fa-download"></i> Baixar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Aula Favorita 5 -->
+              <div class="favorite-card" data-category="strategies">
+                <div class="card-header">
+                  <div
+                    class="card-image"
+                    style="
+                      background-image: url('../assets/cards/omen-card.webp');
+                    "
+                  >
+                    <button class="favorite-btn favorited">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <div class="card-overlay">
+                      <button class="play-btn">
+                        <i class="fas fa-play"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div class="card-badges">
+                    <span class="difficulty-badge hard">Avançado</span>
+                    <span class="category-badge">Estratégias</span>
+                  </div>
+                  <h3>Omen - Smokes Estratégicas</h3>
+                  <p>Posicionamento estratégico de smokes</p>
+                  <div class="card-meta">
+                    <span class="duration">
+                      <i class="fas fa-clock"></i> 22 min
+                    </span>
+                    <span class="progress">
+                      <i class="fas fa-spinner"></i> 40%
+                    </span>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-primary">
+                      <i class="fas fa-play"></i> Continuar
+                    </button>
+                    <button class="btn-secondary">
+                      <i class="fas fa-download"></i> Baixar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Aula Favorita 6 -->
+              <div class="favorite-card" data-category="agents">
+                <div class="card-header">
+                  <div
+                    class="card-image"
+                    style="
+                      background-image: url('../assets/cards/sage-card.jpeg');
+                    "
+                  >
+                    <button class="favorite-btn favorited">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <div class="card-overlay">
+                      <button class="play-btn">
+                        <i class="fas fa-play"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div class="card-badges">
+                    <span class="difficulty-badge medium">Intermediário</span>
+                    <span class="category-badge">Agentes</span>
+                  </div>
+                  <h3>Sage - Suporte Avançado</h3>
+                  <p>Estratégias avançadas de healing e revive</p>
+                  <div class="card-meta">
+                    <span class="duration">
+                      <i class="fas fa-clock"></i> 20 min
+                    </span>
+                    <span class="progress">
+                      <i class="fas fa-spinner"></i> 60%
+                    </span>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-primary">
+                      <i class="fas fa-play"></i> Continuar
+                    </button>
+                    <button class="btn-secondary">
+                      <i class="fas fa-download"></i> Baixar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Seção de Playlists -->
+          <section class="playlists-section">
+            <h2>Playlists Personalizadas</h2>
+            <div class="playlists-grid">
+              <div class="playlist-card">
+                <div class="playlist-header">
+                  <div class="playlist-icon">
+                    <i class="fas fa-user-secret"></i>
+                  </div>
+                  <h3>Meus Agentes Favoritos</h3>
+                </div>
+                <div class="playlist-content">
+                  <p>8 aulas sobre seus agentes preferidos</p>
+                  <div class="playlist-progress">
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 75%"></div>
+                    </div>
+                    <span class="progress-text">6 de 8 concluídas</span>
+                  </div>
+                </div>
+                <div class="playlist-actions">
+                  <button class="btn-primary">
+                    <i class="fas fa-play"></i> Continuar
+                  </button>
+                  <button class="btn-secondary">
+                    <i class="fas fa-edit"></i> Editar
+                  </button>
+                </div>
+              </div>
+
+              <div class="playlist-card">
+                <div class="playlist-header">
+                  <div class="playlist-icon">
+                    <i class="fas fa-chess"></i>
+                  </div>
+                  <h3>Estratégias Avançadas</h3>
+                </div>
+                <div class="playlist-content">
+                  <p>12 aulas sobre táticas e estratégias</p>
+                  <div class="playlist-progress">
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 50%"></div>
+                    </div>
+                    <span class="progress-text">6 de 12 concluídas</span>
+                  </div>
+                </div>
+                <div class="playlist-actions">
+                  <button class="btn-primary">
+                    <i class="fas fa-play"></i> Continuar
+                  </button>
+                  <button class="btn-secondary">
+                    <i class="fas fa-edit"></i> Editar
+                  </button>
+                </div>
+              </div>
+
+              <div class="playlist-card create-new">
+                <div class="create-content">
+                  <div class="create-icon">
+                    <i class="fas fa-plus"></i>
+                  </div>
+                  <h3>Criar Nova Playlist</h3>
+                  <p>
+                    Organize suas aulas favoritas em playlists personalizadas
+                  </p>
+                </div>
+                <button class="btn-primary">
+                  <i class="fas fa-plus"></i> Criar Playlist
+                </button>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="../js/main.js" type="module"></script>
+  </body>
+</html>

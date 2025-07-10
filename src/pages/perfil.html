@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Perfil - Valorant Ace School</title>
+    <link
+      rel="icon"
+      href="../assets/logoPage/Valorant-Academy.png"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="vw-100 vh-100">
+    <div id="" class="">
+      <div class="row">
+        <!-- Topbar estilo Twitch -->
+        <nav class="navbar col-12 col-lg-12 p-0 navbar-expand-lg">
+          <div class="container-fluid" id="topBar">
+            <div class="topbar justify-content-between gap-2" id="navbarNav">
+              <!-- BOTÃO HAMBURGER (só aparece em mobile) -->
+              <button class="hamburger-btn d-lg-none" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+              </button>
+
+              <!-- LOGO -->
+              <div class="logo">
+                <img
+                  src="../assets/logoPage/Valorant-Academy.png"
+                  alt="Valorant Academy"
+                />
+                <img src="../assets/logoPage/ACE.png" alt="ACE" />
+              </div>
+
+              <!-- BARRA DE PESQUISA -->
+              <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar..." />
+              </div>
+
+              <!-- BOTÕES -->
+              <div class="user-actions">
+                <!-- BOTÃO NOTIFICAÇÕES -->
+                <i class="fas fa-bell"></i>
+
+                <!-- DROPDOWN -->
+                <div class="dropdown">
+                  <button
+                    class="btn dropdownProfile dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-circle-user"></i>
+                  </button>
+                  <!-- DROPDOWN MENU -->
+                  <ul
+                    class="dropdown-menu dropdown-menu-dark dropdown-menu-end mt-3"
+                  >
+                    <!-- BOTÃO PERFIL -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="perfil.html"
+                      >
+                        <i class="fas fa-user-circle"></i>
+                        Meu Perfil
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO PROGRESSO -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="progresso.html"
+                      >
+                        <i class="fas fa-chart-line text-success"></i>
+                        Meu Progresso
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO FAVORITOS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="favoritas.html"
+                      >
+                        <i class="fas fa-heart text-danger"></i>
+                        Aulas Favoritas
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO CERTIFICADOS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="certificados.html"
+                      >
+                        <i class="fas fa-certificate text-warning"></i>
+                        Certificados
+                      </a>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO RANK/ELO -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="rank.html"
+                      >
+                        <i class="fas fa-trophy text-warning"></i>
+                        Meu Rank:
+                        <span class="badge bg-purple ms-1">Diamante</span>
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO ESTATÍSTICAS -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="estatisticas.html"
+                      >
+                        <i class="fas fa-chart-bar text-info"></i>
+                        Estatísticas
+                      </a>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO CONFIGURAÇÕES -->
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        href="configuracoes.html"
+                      >
+                        <i class="fas fa-cog text-secondary"></i>
+                        Configurações
+                      </a>
+                    </li>
+
+                    <!-- BOTÃO TEMA -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5"
+                        type="button"
+                        data-theme-toggle
+                      >
+                        <i class="fas fa-moon text-warning"></i>
+                        <span class="theme-text">Tema Escuro</span>
+                      </button>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
+
+                    <!-- BOTÃO SAIR -->
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center gap-2 p-3 pe-5 text-danger"
+                        type="button"
+                      >
+                        <i class="fas fa-sign-out-alt"></i>
+                        Sair
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Overlay para mobile -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Sidebar com botão de fechar -->
+        <aside class="sidebar col-12 col-lg-3 col-xl-3 col-xxl-2" id="sidebar">
+          <!-- Botão fechar só aparece em mobile -->
+          <button class="close-btn d-lg-none" id="sidebarClose">
+            <i class="fas fa-times"></i>
+          </button>
+
+          <!-- MENU -->
+          <ul class="nav-links">
+            <div class="search-bar d-lg-none mb-2">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Buscar..." />
+            </div>
+            <li>
+              <a href="../index.html"> <i class="fas fa-home"></i> Home </a>
+            </li>
+            <li>
+              <a href="agentes.html">
+                <i class="fas fa-user-secret"></i> Agentes
+              </a>
+            </li>
+            <li>
+              <a href="funcoes.html">
+                <i class="fas fa-shield-alt"></i> Funções
+              </a>
+            </li>
+            <li>
+              <a href="mapas.html"> <i class="fas fa-map"></i> Mapas </a>
+            </li>
+            <li>
+              <a href="configuracoes.html">
+                <i class="fas fa-cog"></i> Configurações
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content col-12 col-lg-9 col-xl-9 col-xxl-10">
+          <!-- Hero Section -->
+          <section
+            class="hero"
+            style="background-image: url('../assets/hero/valorant-banner.avif')"
+          >
+            <div class="hero-content">
+              <h1>Meu Perfil</h1>
+              <p>
+                Gerencie suas informações pessoais e acompanhe seu progresso
+              </p>
+              <button class="btn-play">
+                Editar Perfil <i class="fas fa-edit"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- Perfil do Usuário -->
+          <section class="profile-overview">
+            <div class="profile-header">
+              <div class="profile-avatar">
+                <div class="avatar-circle">
+                  <i class="fas fa-user"></i>
+                </div>
+                <button class="change-avatar-btn">
+                  <i class="fas fa-camera"></i>
+                </button>
+              </div>
+              <div class="profile-info">
+                <h2>ValorantPro#2024</h2>
+                <p class="profile-title">Estudante Diamante</p>
+                <div class="profile-stats">
+                  <div class="stat-item">
+                    <span class="stat-value">87</span>
+                    <span class="stat-label">Aulas Concluídas</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-value">24</span>
+                    <span class="stat-label">Certificados</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-value">156</span>
+                    <span class="stat-label">Horas de Estudo</span>
+                  </div>
+                </div>
+              </div>
+              <div class="profile-actions">
+                <button class="btn-primary">
+                  <i class="fas fa-edit"></i> Editar Perfil
+                </button>
+                <button class="btn-secondary">
+                  <i class="fas fa-share"></i> Compartilhar
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Informações Pessoais -->
+          <section class="personal-info">
+            <h2>Informações Pessoais</h2>
+            <div class="info-grid">
+              <div class="info-card">
+                <div class="info-header">
+                  <h3><i class="fas fa-user"></i> Dados Básicos</h3>
+                </div>
+                <div class="info-content">
+                  <div class="info-row">
+                    <span class="info-label">Nome Completo:</span>
+                    <span class="info-value">João Silva</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">Email:</span>
+                    <span class="info-value">joao.silva@email.com</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">Data de Nascimento:</span>
+                    <span class="info-value">15/03/1995</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">Localização:</span>
+                    <span class="info-value">São Paulo, Brasil</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-header">
+                  <h3><i class="fas fa-gamepad"></i> Informações de Jogo</h3>
+                </div>
+                <div class="info-content">
+                  <div class="info-row">
+                    <span class="info-label">Rank Atual:</span>
+                    <span class="info-value">
+                      <span class="rank-badge diamond">Diamante 2</span>
+                    </span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">Agente Principal:</span>
+                    <span class="info-value">Jett</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">Função Favorita:</span>
+                    <span class="info-value">Duelista</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">Servidor:</span>
+                    <span class="info-value">Brasil</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-header">
+                  <h3><i class="fas fa-chart-line"></i> Estatísticas Gerais</h3>
+                </div>
+                <div class="info-content">
+                  <div class="info-row">
+                    <span class="info-label">Tempo na Plataforma:</span>
+                    <span class="info-value">3 meses</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">Sequência Atual:</span>
+                    <span class="info-value">12 dias</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">Taxa de Conclusão:</span>
+                    <span class="info-value">94%</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">Última Atividade:</span>
+                    <span class="info-value">Hoje, 14:30</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Progresso Recente -->
+          <section class="recent-progress">
+            <h2>Progresso Recente</h2>
+            <div class="progress-grid">
+              <div class="progress-card">
+                <div class="progress-header">
+                  <h3>Aulas Concluídas Esta Semana</h3>
+                  <span class="progress-number">8</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 80%"></div>
+                </div>
+                <p class="progress-text">80% da meta semanal</p>
+              </div>
+
+              <div class="progress-card">
+                <div class="progress-header">
+                  <h3>Tempo de Estudo</h3>
+                  <span class="progress-number">12h</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 60%"></div>
+                </div>
+                <p class="progress-text">60% da meta semanal</p>
+              </div>
+
+              <div class="progress-card">
+                <div class="progress-header">
+                  <h3>Exercícios Completados</h3>
+                  <span class="progress-number">24</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 90%"></div>
+                </div>
+                <p class="progress-text">90% da meta semanal</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Conquistas Recentes -->
+          <section class="recent-achievements">
+            <h2>Conquistas Recentes</h2>
+            <div class="achievements-grid">
+              <div class="achievement-card">
+                <div class="achievement-icon">
+                  <i class="fas fa-trophy"></i>
+                </div>
+                <div class="achievement-info">
+                  <h3>Mestre em Jett</h3>
+                  <p>Completou todas as aulas sobre Jett</p>
+                  <span class="achievement-date">Há 2 dias</span>
+                </div>
+              </div>
+
+              <div class="achievement-card">
+                <div class="achievement-icon">
+                  <i class="fas fa-fire"></i>
+                </div>
+                <div class="achievement-info">
+                  <h3>Sequência de 10 Dias</h3>
+                  <p>Estudou por 10 dias consecutivos</p>
+                  <span class="achievement-date">Há 3 dias</span>
+                </div>
+              </div>
+
+              <div class="achievement-card">
+                <div class="achievement-icon">
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="achievement-info">
+                  <h3>Primeiro Certificado</h3>
+                  <p>Conquistou seu primeiro certificado</p>
+                  <span class="achievement-date">Há 1 semana</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>
